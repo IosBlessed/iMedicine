@@ -18,7 +18,7 @@ extension AuthenticationViewModel{
             let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
             user = authResult.user
             authenticationState = .authenticated
-            displayName = user?.email ?? "Unknown User"
+            displayName = user?.email ?? "Unknown user"
         }catch{
             print(error)
             errorMessage = error.localizedDescription

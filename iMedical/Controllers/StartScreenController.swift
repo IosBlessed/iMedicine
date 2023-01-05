@@ -6,6 +6,7 @@
 //
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class StartScreenController: UIViewController{
 
@@ -19,6 +20,7 @@ class StartScreenController: UIViewController{
   
     var firstAppearance:Bool = true
     var mainView: UIView!
+   var login = AuthenticationViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView = startScreen.setupBackgroundView()
@@ -54,22 +56,13 @@ class StartScreenController: UIViewController{
         backItem.setBackButtonItem(title: "Home")
         navigationItem.backBarButtonItem = backItem
     }
-    /*override func viewWillAppear(_ animated: Bool) {
-           mainView.center.y -= view.bounds.height
-            for btn in actionButtons{
-                btn.alpha = 0.0
-            }
-        }
+  
     override func viewDidAppear(_ animated: Bool) {
-            UIView.animate(withDuration: 0.5, animations: {
-                self.mainView.center.y += self.view.bounds.height
-            })
-            var delayTime = 0.5
-            for btn in actionButtons{
-                UIView.animate(withDuration: 0.5, delay: delayTime, options: .curveEaseIn, animations:{
-                    btn.alpha = 1.0
-                })
-                delayTime += 0.5
-            }
-        }*/
+        guard login.authenticationState == .authenticated else{return}
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let mainVC = storyboard.instantiateViewController(withIdentifier: "mainVC") as? MainScreenViewController{
+            mainVC.navigationItem.hidesBackButton = true
+            show(mainVC,sender: nil)
+    }
+    }
 }

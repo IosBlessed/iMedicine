@@ -9,7 +9,6 @@ import Foundation
 import FirebaseAuth
 import FirebaseCore
 
-
 class AuthenticationViewModel: ObservableObject {
     
     enum AuthenticationState{ // To check current state of user
@@ -27,6 +26,7 @@ class AuthenticationViewModel: ObservableObject {
     @Published var confirmPassword:String = ""
     
     @Published var flow:AuthenticationFlow = .signIn
+    
     @Published var authenticationState:AuthenticationState = .unauthenticated
     
     @Published var isValid:Bool = false
@@ -41,7 +41,6 @@ class AuthenticationViewModel: ObservableObject {
         registerAuthStateHandler()
     }
     
-    
     func registerAuthStateHandler(){
         guard authStateHandle == nil else{return}
         authStateHandle = Auth.auth().addStateDidChangeListener({auth, user in
@@ -50,7 +49,6 @@ class AuthenticationViewModel: ObservableObject {
             self.displayName = user?.email ?? "Unknown user"
         })
     }
-    
     
     
     func switchFlow(){

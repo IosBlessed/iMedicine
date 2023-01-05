@@ -12,14 +12,14 @@ extension UIViewController{
     
     func setGradient()->CAGradientLayer{
         
-        let colorTop = UIColor(red: 192.0 / 255.0, green: 38.0 / 255.0, blue: 42.0 / 255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 35.0 / 255.0, green: 2.0 / 255.0, blue: 2.0 / 255.0, alpha: 1.0).cgColor
+        let colorTop = UIColor(red: 100.0 / 255.0, green: 150.0 / 255.0, blue: 165.0 / 255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 35.0 / 255.0, green: 35.0 / 255.0, blue: 55.0 / 255.0, alpha: 1.0).cgColor
         
         let gradient:CAGradientLayer = {
             let gl = CAGradientLayer()
-                gl.frame = UIView().bounds
+                gl.frame = view.bounds
                 gl.colors = [colorTop, colorBottom]
-                gl.locations = [0.0, 1.0]
+            gl.locations = [0.0,0.9]
                 return gl
         }()
         return gradient

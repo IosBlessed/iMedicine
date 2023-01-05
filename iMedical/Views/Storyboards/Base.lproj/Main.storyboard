@@ -215,6 +215,24 @@
             </objects>
             <point key="canvasLocation" x="1253.6231884057972" y="-271.20535714285711"/>
         </scene>
+        <!--Main Screen View Controller-->
+        <scene sceneID="1Lj-xz-9sU">
+            <objects>
+                <viewController storyboardIdentifier="mainVC" id="8N5-nj-S5w" customClass="MainScreenViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="imh-sz-35v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1YA-uN-4Qc"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="imh-sz-35v" id="Hyd-wI-KkB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jYI-iu-41G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2270" y="-271"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="gqv-dC-nCd">
             <objects>
