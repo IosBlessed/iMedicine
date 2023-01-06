@@ -215,41 +215,54 @@
             </objects>
             <point key="canvasLocation" x="1253.6231884057972" y="-271.20535714285711"/>
         </scene>
-        <!--Main Screen View Controller-->
-        <scene sceneID="1Lj-xz-9sU">
+        <!--Item 2-->
+        <scene sceneID="2Ab-cL-Ble">
             <objects>
-                <viewController storyboardIdentifier="mainVC" id="8N5-nj-S5w" customClass="MainScreenViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="imh-sz-35v">
+                <viewController id="cUP-bq-5jS" customClass="TabletsViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eBD-w6-Z4a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvb-dF-1yg">
-                                <rect key="frame" x="47" y="270" width="320" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1fH-kY-8r8">
-                                <rect key="frame" x="36" y="74" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=" " subtitle=" ">
-                                    <backgroundConfiguration key="background" image="stripes.png"/>
-                                </buttonConfiguration>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="1YA-uN-4Qc"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="N5j-E7-aU9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <outlet property="backgroundView" destination="imh-sz-35v" id="Hyd-wI-KkB"/>
-                        <outlet property="testText" destination="Uvb-dF-1yg" id="dQF-gb-zbC"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="Vno-pK-7AM"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jYI-iu-41G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="99x-hM-ohz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269.5652173913045" y="-271.20535714285711"/>
+            <point key="canvasLocation" x="3748" y="151"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="Nll-ix-MzR">
+            <objects>
+                <viewController id="b2w-zw-iQi" customClass="UserAccountViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IzA-qP-BRt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ThU-5o-Zcc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" id="NGV-Eg-ff2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCo-Km-Dqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3749" y="-524"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="l6l-6f-OrP">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarVC" id="oQ7-6w-9Vr" customClass="TabBarViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="sJU-nR-BWN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="b2w-zw-iQi" kind="relationship" relationship="viewControllers" id="wEh-03-Fer"/>
+                        <segue destination="cUP-bq-5jS" kind="relationship" relationship="viewControllers" id="By3-12-ebp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jx-SP-bCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2352" y="-271"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="gqv-dC-nCd">
@@ -382,10 +395,12 @@
         </designable>
     </designables>
     <resources>
-        <image name="stripes.png" width="100" height="100"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

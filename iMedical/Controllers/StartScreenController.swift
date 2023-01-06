@@ -40,6 +40,7 @@ class StartScreenController: UIViewController{
          }
     }
     func backgroundAnimationFinish(){
+        
         UIView.animate(withDuration: 0.5, animations: {
             self.mainView.center.y += self.view.bounds.height
         })
@@ -50,19 +51,23 @@ class StartScreenController: UIViewController{
             })
             delayTime += 0.5
         }
+        
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let backItem = UIBarButtonItem()
         backItem.setBackButtonItem(title: "Home")
         navigationItem.backBarButtonItem = backItem
+        
     }
   
     override func viewDidAppear(_ animated: Bool) {
+        
         guard login.authenticationState == .authenticated else{return}
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let mainVC = storyboard.instantiateViewController(withIdentifier: "mainVC") as? MainScreenViewController{
-            mainVC.navigationItem.hidesBackButton = true
-            show(mainVC,sender: nil)
-    }
+        if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? TabBarViewController{
+            tabBarVC.navigationItem.hidesBackButton = true
+            show(tabBarVC,sender: nil)
+        }
     }
 }
