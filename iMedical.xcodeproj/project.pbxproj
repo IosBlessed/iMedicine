@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372EFE2C29678A2400BBCC99 /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 372EFE2B29678A2400BBCC99 /* account.png */; };
+		372EFE2E29678AFE00BBCC99 /* stripes.png in Resources */ = {isa = PBXBuildFile; fileRef = 372EFE2D29678AFE00BBCC99 /* stripes.png */; };
 		372F4EC829674C03008A59E5 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F4EC729674C03008A59E5 /* MainScreenViewController.swift */; };
 		3732E51129631A7A000EA112 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732E51029631A7A000EA112 /* SignInViewController.swift */; };
 		3732E51329631A86000EA112 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732E51229631A86000EA112 /* SignUpViewController.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372EFE2B29678A2400BBCC99 /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
+		372EFE2D29678AFE00BBCC99 /* stripes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripes.png; sourceTree = "<group>"; };
 		372F4EC729674C03008A59E5 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		3732E51029631A7A000EA112 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3732E51229631A86000EA112 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 		3759F6E1295FA73C006DC324 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				372EFE2D29678AFE00BBCC99 /* stripes.png */,
+				372EFE2B29678A2400BBCC99 /* account.png */,
 				377C5B182962A8F10090AB3D /* company_icon.png */,
 				3759F6E6295FB0AC006DC324 /* main_screen.jpg */,
 			);
@@ -246,9 +252,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372EFE2E29678AFE00BBCC99 /* stripes.png in Resources */,
 				375337F7295F78EE007D1415 /* LaunchScreen.storyboard in Resources */,
 				3759F6CF295F7D06006DC324 /* GoogleService-Info.plist in Resources */,
 				377C5B192962A8F10090AB3D /* company_icon.png in Resources */,
+				372EFE2C29678A2400BBCC99 /* account.png in Resources */,
 				375337F4295F78EE007D1415 /* Assets.xcassets in Resources */,
 				375337F2295F78EE007D1415 /* Main.storyboard in Resources */,
 				3759F6E7295FB0AC006DC324 /* main_screen.jpg in Resources */,

@@ -12,8 +12,8 @@ extension UIViewController{
     
     func setGradient()->CAGradientLayer{
         
-        let colorTop = UIColor(red: 100.0 / 255.0, green: 150.0 / 255.0, blue: 165.0 / 255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 35.0 / 255.0, green: 35.0 / 255.0, blue: 55.0 / 255.0, alpha: 1.0).cgColor
+        let colorTop = UIColor(red: 48.0 / 255.0, green: 43.0 / 255.0, blue: 77.0 / 255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 90.0 / 255.0, green: 43.0 / 255.0, blue: 77.0 / 255.0, alpha: 1.0).cgColor
         
         let gradient:CAGradientLayer = {
             let gl = CAGradientLayer()
