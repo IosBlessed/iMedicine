@@ -23,7 +23,7 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
         
-    var login = AuthenticationViewModel()
+    var authentication = AuthenticationViewModel()
     
     override func viewDidLoad() {
         
@@ -33,19 +33,34 @@ class SignInViewController: UIViewController {
         backgroundView.addSubview(credentialsView)
         
     }
-    func logUser()async{
-        login.email = loginField.text!
-        login.password = passwordField.text!
-        guard await login.signInWithEmailPassword() != false else{return}
-        print(login.authenticationState)
+    
+    func loginUser()async{
+        
+        authentication.email = loginField.text!
+        authentication.password = passwordField.text!
+        
+        guard await authentication.signInWithEmailPassword() else{
+            print("Authentication Error: \(authentication.errorMessage)");
+            return
+        }
+       print("Successful authentication")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? TabBarViewController{
+            show(tabBarVC, sender: nil)
+        }
+        
     }
+    
     @IBAction func loginButton( sender:RoundButtonView!){
-        guard self.checkIfFieldsNotEmpty(requiredFields: requiredFields, textFields: inputFields) else {
+        
+        guard self.checkIfFieldsSatisfy(requiredFields: requiredFields, textFields: inputFields) else {
             self.showAlertMessage(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
             return
         }
         Task{
-            await logUser()
-        }
+            await loginUser()
         }
     }
+    
+}

@@ -11,8 +11,10 @@ class TabletsViewController: UIViewController {
 
  
     override func viewDidLoad() {
+        
         let gradient = self.setGradient()
         view.layer.addSublayer(gradient)
+        
     }
     
 

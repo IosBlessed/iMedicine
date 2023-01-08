@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="quy-gp-NlM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="efN-t3-56t">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -215,54 +215,50 @@
             </objects>
             <point key="canvasLocation" x="1253.6231884057972" y="-271.20535714285711"/>
         </scene>
-        <!--Item 2-->
-        <scene sceneID="2Ab-cL-Ble">
-            <objects>
-                <viewController id="cUP-bq-5jS" customClass="TabletsViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eBD-w6-Z4a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="N5j-E7-aU9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="Vno-pK-7AM"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="99x-hM-ohz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3748" y="151"/>
-        </scene>
         <!--Me-->
-        <scene sceneID="Nll-ix-MzR">
+        <scene sceneID="jnM-CA-IKh">
             <objects>
-                <viewController id="b2w-zw-iQi" customClass="UserAccountViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IzA-qP-BRt">
+                <viewController storyboardIdentifier="userAccVC" title="Me" id="I0j-XH-b8a" customClass="UserAccountViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t6f-D9-1x0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ThU-5o-Zcc"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCh-5q-fIc">
+                                <rect key="frame" x="103" y="193" width="209" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qPk-Ma-3sq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Me" id="NGV-Eg-ff2"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CCo-Km-Dqr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3749" y="-524"/>
-        </scene>
-        <!--Tab Bar View Controller-->
-        <scene sceneID="l6l-6f-OrP">
-            <objects>
-                <tabBarController storyboardIdentifier="tabBarVC" id="oQ7-6w-9Vr" customClass="TabBarViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" id="sJU-nR-BWN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </tabBar>
+                    <tabBarItem key="tabBarItem" title="Item" id="7XH-Xr-Fwa"/>
+                    <navigationItem key="navigationItem" id="iS3-PH-fw1"/>
                     <connections>
-                        <segue destination="b2w-zw-iQi" kind="relationship" relationship="viewControllers" id="wEh-03-Fer"/>
-                        <segue destination="cUP-bq-5jS" kind="relationship" relationship="viewControllers" id="By3-12-ebp"/>
+                        <outlet property="test" destination="RCh-5q-fIc" id="fla-cV-9D4"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6jx-SP-bCI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1t-0z-I56" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2352" y="-271"/>
+            <point key="canvasLocation" x="4383" y="-613"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="Lxn-oZ-m6K">
+            <objects>
+                <viewController storyboardIdentifier="tabletsVC" id="5kI-8X-lf2" customClass="TabletsViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r4O-q8-tfq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2tD-ce-2P0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" tag="1" title="Item" id="K5B-MI-Rc0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZON-GV-pRy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4384" y="108"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="gqv-dC-nCd">
@@ -332,7 +328,7 @@
                                 <rect key="frame" x="87" y="441" width="240" height="39.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZnK-hu-X9q">
                                 <rect key="frame" x="87" y="291" width="240" height="39.5"/>
@@ -347,6 +343,9 @@
                     <navigationItem key="navigationItem" id="llK-FL-lDU"/>
                     <connections>
                         <outlet property="backgroundView" destination="lbR-Wi-ZVl" id="b6e-fp-uip"/>
+                        <outlet property="confirmPasswordField" destination="S7g-ii-qB0" id="cPS-EI-G7t"/>
+                        <outlet property="emailField" destination="ZnK-hu-X9q" id="9Wx-9s-0AL"/>
+                        <outlet property="passwordField" destination="RrO-tN-Gpi" id="Mfj-Nu-7oa"/>
                         <outletCollection property="requiredFields" destination="Xae-Em-bTV" collectionClass="NSMutableArray" id="sBT-Rw-EBg"/>
                         <outletCollection property="requiredFields" destination="omS-UU-XrX" collectionClass="NSMutableArray" id="6br-El-GVW"/>
                         <outletCollection property="requiredFields" destination="eW3-O2-Ydp" collectionClass="NSMutableArray" id="cR0-Wg-8u8"/>
@@ -378,6 +377,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MwU-Ot-lZe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1009" y="108"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="u8Q-uf-DWW">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="efN-t3-56t" customClass="TabBarViewController" customModule="iMedical" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="tYC-IR-w13"/>
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jX3-qm-Gtq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="I0j-XH-b8a" kind="relationship" relationship="viewControllers" id="J57-hK-Ykw"/>
+                        <segue destination="5kI-8X-lf2" kind="relationship" relationship="viewControllers" id="xdc-X5-ZeI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OSk-Fe-a9w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3151" y="-271"/>
         </scene>
     </scenes>
     <designables>

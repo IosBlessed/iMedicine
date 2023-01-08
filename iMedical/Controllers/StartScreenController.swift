@@ -20,9 +20,9 @@ class StartScreenController: UIViewController{
   
     var firstAppearance:Bool = true
     var mainView: UIView!
-   var login = AuthenticationViewModel()
+    var login = AuthenticationViewModel()
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         mainView = startScreen.setupBackgroundView()
         view.addSubview(mainView)
         view.addSubview(actionButtonsView)
@@ -62,12 +62,12 @@ class StartScreenController: UIViewController{
     }
   
     override func viewDidAppear(_ animated: Bool) {
-        
+        /*
         guard login.authenticationState == .authenticated else{return}
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? TabBarViewController{
             tabBarVC.navigationItem.hidesBackButton = true
             show(tabBarVC,sender: nil)
-        }
+        }*/
     }
 }

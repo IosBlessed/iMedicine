@@ -23,6 +23,7 @@ extension UIViewController{
                 return gl
         }()
         return gradient
+        
     }
     
     func showAlertMessage(alertTitle: String,alertMessage:String, alertButtonTitle:String){
@@ -34,7 +35,7 @@ extension UIViewController{
         
     }
     
-    func checkIfFieldsNotEmpty(requiredFields:[UILabel],textFields:[UITextField])->Bool{
+    func checkIfFieldsSatisfy(requiredFields:[UILabel],textFields:[UITextField])->Bool{
         
         var fieldsNotEmpty = true
         for index in 0..<textFields.count{

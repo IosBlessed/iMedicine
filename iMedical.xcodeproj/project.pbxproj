@@ -28,8 +28,8 @@
 		377C5B152962A1F00090AB3D /* RoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C5B142962A1F00090AB3D /* RoundButtonView.swift */; };
 		377C5B192962A8F10090AB3D /* company_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 377C5B182962A8F10090AB3D /* company_icon.png */; };
 		379260472967B6210034CA6A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379260462967B6210034CA6A /* TabBarViewController.swift */; };
-		379CC8E3296841F800557FC9 /* ExtensionUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CC8E2296841F800557FC9 /* ExtensionUITabBarController.swift */; };
 		37D3E34C29650D21007774B4 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */; };
+		37FD53852968A13F00D40C01 /* userIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FD53842968A13F00D40C01 /* userIcon.png */; };
 		B65D757A6750047D3E4AE1A9 /* Pods_iMedical.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E771E8A57316FD4C32AF827 /* Pods_iMedical.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,8 +57,8 @@
 		377C5B142962A1F00090AB3D /* RoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonView.swift; sourceTree = "<group>"; };
 		377C5B182962A8F10090AB3D /* company_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_icon.png; sourceTree = "<group>"; };
 		379260462967B6210034CA6A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		379CC8E2296841F800557FC9 /* ExtensionUITabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITabBarController.swift; sourceTree = "<group>"; };
 		37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
+		37FD53842968A13F00D40C01 /* userIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userIcon.png; sourceTree = "<group>"; };
 		8E771E8A57316FD4C32AF827 /* Pods_iMedical.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMedical.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EE7CDABF311D29BAF435DD /* Pods-iMedical.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMedical.release.xcconfig"; path = "Target Support Files/Pods-iMedical/Pods-iMedical.release.xcconfig"; sourceTree = "<group>"; };
 		E04AEC4898AE04F72E04D2D7 /* Pods-iMedical.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMedical.debug.xcconfig"; path = "Target Support Files/Pods-iMedical/Pods-iMedical.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,7 +164,6 @@
 				3759F6E4295FAE7A006DC324 /* ExtensionBarBackButton.swift */,
 				37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */,
 				37662EB129671AE4004A4AC2 /* ExtensionAuthenticationViewModel.swift */,
-				379CC8E2296841F800557FC9 /* ExtensionUITabBarController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -172,6 +171,7 @@
 		3759F6E1295FA73C006DC324 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				37FD53842968A13F00D40C01 /* userIcon.png */,
 				372EFE2D29678AFE00BBCC99 /* stripes.png */,
 				372EFE2B29678A2400BBCC99 /* account.png */,
 				377C5B182962A8F10090AB3D /* company_icon.png */,
@@ -264,6 +264,7 @@
 				377C5B192962A8F10090AB3D /* company_icon.png in Resources */,
 				372EFE2C29678A2400BBCC99 /* account.png in Resources */,
 				375337F4295F78EE007D1415 /* Assets.xcassets in Resources */,
+				37FD53852968A13F00D40C01 /* userIcon.png in Resources */,
 				375337F2295F78EE007D1415 /* Main.storyboard in Resources */,
 				3759F6E7295FB0AC006DC324 /* main_screen.jpg in Resources */,
 			);
@@ -326,7 +327,6 @@
 				3759F6E5295FAE7A006DC324 /* ExtensionBarBackButton.swift in Sources */,
 				372EFE322967B14C00BBCC99 /* TabletsViewController.swift in Sources */,
 				3759F6DE295F8FD9006DC324 /* BackgroundScreenView.swift in Sources */,
-				379CC8E3296841F800557FC9 /* ExtensionUITabBarController.swift in Sources */,
 				3732E51129631A7A000EA112 /* SignInViewController.swift in Sources */,
 				375337EB295F78EE007D1415 /* AppDelegate.swift in Sources */,
 				3732E51329631A86000EA112 /* SignUpViewController.swift in Sources */,

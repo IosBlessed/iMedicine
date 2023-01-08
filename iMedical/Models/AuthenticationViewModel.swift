@@ -29,7 +29,6 @@ class AuthenticationViewModel: ObservableObject {
     
     @Published var authenticationState:AuthenticationState = .unauthenticated
     
-    @Published var isValid:Bool = false
     @Published var errorMessage:String = ""
     @Published var displayName:String = ""
 
@@ -42,12 +41,14 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     func registerAuthStateHandler(){
+        // Check if there is any authentication (if != nil, then user authenticated )
         guard authStateHandle == nil else{return}
         authStateHandle = Auth.auth().addStateDidChangeListener({auth, user in
             self.user = user
             self.authenticationState = user == nil ? .unauthenticated : .authenticated
             self.displayName = user?.email ?? "Unknown user"
         })
+        
     }
     
     
