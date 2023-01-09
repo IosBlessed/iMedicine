@@ -17,7 +17,7 @@ extension UIViewController{
         
         let gradient:CAGradientLayer = {
             let gl = CAGradientLayer()
-                gl.frame = view.bounds
+            gl.frame = view.bounds
                 gl.colors = [colorTop, colorBottom]
             gl.locations = [0.0,0.9]
                 return gl

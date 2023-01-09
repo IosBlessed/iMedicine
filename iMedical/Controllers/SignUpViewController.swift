@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     
     @IBOutlet weak var confirmPasswordField: UITextField!
-    var authentication = AuthenticationViewModel()
+    var authentication = UserViewModel()
     
     override func viewDidLoad() {
 
@@ -45,6 +45,7 @@ class SignUpViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? TabBarViewController{
+            tabBarVC.navigationItem.hidesBackButton = true
             show(tabBarVC, sender: nil)
         }
         
