@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370E6A0B296CAC6000A7CDB8 /* tablets.png in Resources */ = {isa = PBXBuildFile; fileRef = 370E6A0A296CAC6000A7CDB8 /* tablets.png */; };
 		372EFE2C29678A2400BBCC99 /* account.png in Resources */ = {isa = PBXBuildFile; fileRef = 372EFE2B29678A2400BBCC99 /* account.png */; };
 		372EFE2E29678AFE00BBCC99 /* stripes.png in Resources */ = {isa = PBXBuildFile; fileRef = 372EFE2D29678AFE00BBCC99 /* stripes.png */; };
 		372EFE302967B0CF00BBCC99 /* UserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EFE2F2967B0CF00BBCC99 /* UserAccountViewController.swift */; };
@@ -23,8 +24,8 @@
 		3759F6DE295F8FD9006DC324 /* BackgroundScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759F6DD295F8FD9006DC324 /* BackgroundScreenView.swift */; };
 		3759F6E5295FAE7A006DC324 /* ExtensionBarBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759F6E4295FAE7A006DC324 /* ExtensionBarBackButton.swift */; };
 		3759F6E7295FB0AC006DC324 /* main_screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3759F6E6295FB0AC006DC324 /* main_screen.jpg */; };
-		37662EB029670C6B004A4AC2 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662EAF29670C6B004A4AC2 /* AuthenticationViewModel.swift */; };
-		37662EB229671AE4004A4AC2 /* ExtensionAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662EB129671AE4004A4AC2 /* ExtensionAuthenticationViewModel.swift */; };
+		37662EB029670C6B004A4AC2 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662EAF29670C6B004A4AC2 /* UserViewModel.swift */; };
+		37662EB229671AE4004A4AC2 /* ExtensionUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */; };
 		377C5B152962A1F00090AB3D /* RoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C5B142962A1F00090AB3D /* RoundButtonView.swift */; };
 		377C5B192962A8F10090AB3D /* company_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 377C5B182962A8F10090AB3D /* company_icon.png */; };
 		379260472967B6210034CA6A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379260462967B6210034CA6A /* TabBarViewController.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370E6A0A296CAC6000A7CDB8 /* tablets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tablets.png; sourceTree = "<group>"; };
 		372EFE2B29678A2400BBCC99 /* account.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = account.png; sourceTree = "<group>"; };
 		372EFE2D29678AFE00BBCC99 /* stripes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripes.png; sourceTree = "<group>"; };
 		372EFE2F2967B0CF00BBCC99 /* UserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountViewController.swift; sourceTree = "<group>"; };
@@ -52,8 +54,8 @@
 		3759F6DD295F8FD9006DC324 /* BackgroundScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundScreenView.swift; sourceTree = "<group>"; };
 		3759F6E4295FAE7A006DC324 /* ExtensionBarBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionBarBackButton.swift; sourceTree = "<group>"; };
 		3759F6E6295FB0AC006DC324 /* main_screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = main_screen.jpg; sourceTree = "<group>"; };
-		37662EAF29670C6B004A4AC2 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
-		37662EB129671AE4004A4AC2 /* ExtensionAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionAuthenticationViewModel.swift; sourceTree = "<group>"; };
+		37662EAF29670C6B004A4AC2 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserViewModel.swift; sourceTree = "<group>"; };
 		377C5B142962A1F00090AB3D /* RoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonView.swift; sourceTree = "<group>"; };
 		377C5B182962A8F10090AB3D /* company_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_icon.png; sourceTree = "<group>"; };
 		379260462967B6210034CA6A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +137,7 @@
 		37533800295F795B007D1415 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				37662EAF29670C6B004A4AC2 /* AuthenticationViewModel.swift */,
+				37662EAF29670C6B004A4AC2 /* UserViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,7 +165,7 @@
 			children = (
 				3759F6E4295FAE7A006DC324 /* ExtensionBarBackButton.swift */,
 				37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */,
-				37662EB129671AE4004A4AC2 /* ExtensionAuthenticationViewModel.swift */,
+				37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -171,6 +173,7 @@
 		3759F6E1295FA73C006DC324 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				370E6A0A296CAC6000A7CDB8 /* tablets.png */,
 				37FD53842968A13F00D40C01 /* userIcon.png */,
 				372EFE2D29678AFE00BBCC99 /* stripes.png */,
 				372EFE2B29678A2400BBCC99 /* account.png */,
@@ -261,6 +264,7 @@
 				372EFE2E29678AFE00BBCC99 /* stripes.png in Resources */,
 				375337F7295F78EE007D1415 /* LaunchScreen.storyboard in Resources */,
 				3759F6CF295F7D06006DC324 /* GoogleService-Info.plist in Resources */,
+				370E6A0B296CAC6000A7CDB8 /* tablets.png in Resources */,
 				377C5B192962A8F10090AB3D /* company_icon.png in Resources */,
 				372EFE2C29678A2400BBCC99 /* account.png in Resources */,
 				375337F4295F78EE007D1415 /* Assets.xcassets in Resources */,
@@ -319,9 +323,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37662EB029670C6B004A4AC2 /* AuthenticationViewModel.swift in Sources */,
+				37662EB029670C6B004A4AC2 /* UserViewModel.swift in Sources */,
 				3759F6D1295F7EFB006DC324 /* StartScreenController.swift in Sources */,
-				37662EB229671AE4004A4AC2 /* ExtensionAuthenticationViewModel.swift in Sources */,
+				37662EB229671AE4004A4AC2 /* ExtensionUserViewModel.swift in Sources */,
 				377C5B152962A1F00090AB3D /* RoundButtonView.swift in Sources */,
 				379260472967B6210034CA6A /* TabBarViewController.swift in Sources */,
 				3759F6E5295FAE7A006DC324 /* ExtensionBarBackButton.swift in Sources */,

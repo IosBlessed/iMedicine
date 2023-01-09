@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseCore
 
-class AuthenticationViewModel: ObservableObject {
+class UserViewModel: ObservableObject {
     
     enum AuthenticationState{ // To check current state of user
         case unauthenticated
@@ -50,7 +50,6 @@ class AuthenticationViewModel: ObservableObject {
         })
         
     }
-    
     
     func switchFlow(){
         flow = flow == .signIn ? .signUp : .signIn

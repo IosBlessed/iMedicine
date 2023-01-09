@@ -11,15 +11,19 @@ import FirebaseAuth
 class TabBarViewController: UITabBarController {
     
     let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
     override func viewDidLoad() {
+        
         createTabBarLayer()
         createTabBarItems()
+        
     }
     
     func createTabBarLayer(){
+        
         let tbLayer = CAShapeLayer()
-        let positionX:CGFloat = 10
-        let positionY:CGFloat = 15
+        let positionX:CGFloat = 50
+        let positionY:CGFloat = 5
         let width = tabBar.bounds.width - 2 * positionX
         let height = tabBar.bounds.height + 2 * positionY
         
@@ -40,21 +44,24 @@ class TabBarViewController: UITabBarController {
         tbLayer.shadowRadius = 10
         
         tabBar.unselectedItemTintColor = UIColor.gray
+        //Transparent Tab Bar's layout 
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().shadowImage = UIImage()
         
-        tabBar.layer.insertSublayer(tbLayer, at: 0)
-        
-        
+        tabBar.itemPositioning = .centered
+        tabBar.layer.insertSublayer(tbLayer, at: 1)
     }
+    
     func createTabBarItems(){
         
         let userAccountVC = mainStoryboard.instantiateViewController(withIdentifier: "userAccVC") as! UserAccountViewController
         let tabletsAccountVC = mainStoryboard.instantiateViewController(withIdentifier: "tabletsVC") as! TabletsViewController
-        
+        let userNavVC = UINavigationController(rootViewController: userAccountVC)
+        let tabletsNavVC = UINavigationController(rootViewController: tabletsAccountVC)
     viewControllers =  [
-        createVC(viewController: userAccountVC, title: "Me", image: UIImage(systemName:"person.fill")!),
-        createVC(viewController: tabletsAccountVC, title: "Tablets", image: UIImage(systemName: "heart.fill")!)
+        createVC(viewController: userNavVC, title: "", image: UIImage(named:"userIcon.png")!),
+        createVC(viewController: tabletsNavVC, title: "", image: UIImage(named: "tablets.png")!)
       ]
-        
     }
     
     func createVC(viewController:UIViewController,title:String,image:UIImage)->UIViewController{
