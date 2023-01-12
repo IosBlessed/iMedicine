@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 
-class StartScreenController: UIViewController{
+class StartScreenController: UIViewController, UINavigationControllerDelegate{
 
 
     @IBOutlet weak var startScreen: BackgroundScreenView!
@@ -63,8 +63,8 @@ class StartScreenController: UIViewController{
         guard user.authenticationState == .authenticated else{return}
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? TabBarViewController{
-            tabBarVC.navigationItem.hidesBackButton = true
-            show(tabBarVC,sender: nil)
+            tabBarVC.modalPresentationStyle = .fullScreen
+            present(tabBarVC,animated: false)
         }
     }
 }

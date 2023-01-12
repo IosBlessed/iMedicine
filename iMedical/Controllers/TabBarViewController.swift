@@ -50,6 +50,7 @@ class TabBarViewController: UITabBarController {
         
         tabBar.itemPositioning = .centered
         tabBar.layer.insertSublayer(tbLayer, at: 1)
+        
     }
     
     func createTabBarItems(){

@@ -14,6 +14,8 @@
 		372EFE322967B14C00BBCC99 /* TabletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372EFE312967B14C00BBCC99 /* TabletsViewController.swift */; };
 		3732E51129631A7A000EA112 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732E51029631A7A000EA112 /* SignInViewController.swift */; };
 		3732E51329631A86000EA112 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732E51229631A86000EA112 /* SignUpViewController.swift */; };
+		37425120296CB7CC00307273 /* TabletsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742511E296CB7CC00307273 /* TabletsCell.swift */; };
+		37425121296CB7CC00307273 /* TabletsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3742511F296CB7CC00307273 /* TabletsCell.xib */; };
 		375337EB295F78EE007D1415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375337EA295F78EE007D1415 /* AppDelegate.swift */; };
 		375337ED295F78EE007D1415 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375337EC295F78EE007D1415 /* SceneDelegate.swift */; };
 		375337F2295F78EE007D1415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375337F0295F78EE007D1415 /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		372EFE312967B14C00BBCC99 /* TabletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletsViewController.swift; sourceTree = "<group>"; };
 		3732E51029631A7A000EA112 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		3732E51229631A86000EA112 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3742511E296CB7CC00307273 /* TabletsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletsCell.swift; sourceTree = "<group>"; };
+		3742511F296CB7CC00307273 /* TabletsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabletsCell.xib; sourceTree = "<group>"; };
 		375337E7295F78EE007D1415 /* iMedical.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMedical.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		375337EA295F78EE007D1415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		375337EC295F78EE007D1415 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				377C5B112961EBDA0090AB3D /* Storyboards */,
 				3759F6DD295F8FD9006DC324 /* BackgroundScreenView.swift */,
 				377C5B142962A1F00090AB3D /* RoundButtonView.swift */,
+				3742511E296CB7CC00307273 /* TabletsCell.swift */,
+				3742511F296CB7CC00307273 /* TabletsCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 				377C5B192962A8F10090AB3D /* company_icon.png in Resources */,
 				372EFE2C29678A2400BBCC99 /* account.png in Resources */,
 				375337F4295F78EE007D1415 /* Assets.xcassets in Resources */,
+				37425121296CB7CC00307273 /* TabletsCell.xib in Resources */,
 				37FD53852968A13F00D40C01 /* userIcon.png in Resources */,
 				375337F2295F78EE007D1415 /* Main.storyboard in Resources */,
 				3759F6E7295FB0AC006DC324 /* main_screen.jpg in Resources */,
@@ -323,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37425120296CB7CC00307273 /* TabletsCell.swift in Sources */,
 				37662EB029670C6B004A4AC2 /* UserViewModel.swift in Sources */,
 				3759F6D1295F7EFB006DC324 /* StartScreenController.swift in Sources */,
 				37662EB229671AE4004A4AC2 /* ExtensionUserViewModel.swift in Sources */,
