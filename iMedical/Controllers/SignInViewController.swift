@@ -23,7 +23,7 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
         
-    var authentication = UserViewModel()
+    var authentication = UserModel()
     
     override func viewDidLoad() {
         

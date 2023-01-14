@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 
 
-extension UserViewModel{
+extension UserModel{
     
     func signInWithEmailPassword() async -> Bool{
         
