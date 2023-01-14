@@ -20,7 +20,7 @@ class StartScreenController: UIViewController, UINavigationControllerDelegate{
   
     var firstAppearance:Bool = true
     var mainView: UIView!
-    var user = UserViewModel()
+    var user = UserModel()
     override func viewDidLoad() {
         
         mainView = startScreen.setupBackgroundView()

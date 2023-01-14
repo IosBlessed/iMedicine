@@ -20,13 +20,12 @@ class TabBarViewController: UITabBarController {
     }
     
     func createTabBarLayer(){
-        
+        // BackgroundLayer for the TabBar
         let tbLayer = CAShapeLayer()
         let positionX:CGFloat = 50
         let positionY:CGFloat = 5
         let width = tabBar.bounds.width - 2 * positionX
         let height = tabBar.bounds.height + 2 * positionY
-        
         let bezierPath = UIBezierPath(
             roundedRect: CGRect(
                 x: positionX,
@@ -42,11 +41,10 @@ class TabBarViewController: UITabBarController {
         tbLayer.shadowOffset = .zero
         tbLayer.shadowOpacity = 1
         tbLayer.shadowRadius = 10
-        
         tabBar.unselectedItemTintColor = UIColor.gray
-        //Transparent Tab Bar's layout 
+        
+        //Transparent TabBar
         UITabBar.appearance().backgroundImage = UIImage()
-        UITabBar.appearance().shadowImage = UIImage()
         
         tabBar.itemPositioning = .centered
         tabBar.layer.insertSublayer(tbLayer, at: 1)
@@ -60,15 +58,19 @@ class TabBarViewController: UITabBarController {
         let userNavVC = UINavigationController(rootViewController: userAccountVC)
         let tabletsNavVC = UINavigationController(rootViewController: tabletsAccountVC)
     viewControllers =  [
-        createVC(viewController: userNavVC, title: "", image: UIImage(named:"userIcon.png")!),
-        createVC(viewController: tabletsNavVC, title: "", image: UIImage(named: "tablets.png")!)
+        createVC(viewController: userNavVC, tabBarTitle: "", tabBarImage: UIImage(named:"userIcon.png")!),
+        createVC(viewController: tabletsNavVC, tabBarTitle: "", tabBarImage: UIImage(named: "tablets.png")!)
       ]
+        
     }
     
-    func createVC(viewController:UIViewController,title:String,image:UIImage)->UIViewController{
-            viewController.tabBarItem.title = title
-            viewController.tabBarItem.image = image
+    func createVC(viewController:UIViewController,tabBarTitle:String,tabBarImage:UIImage)->UIViewController{
+        
+            viewController.tabBarItem.title = tabBarTitle
+            viewController.tabBarItem.image = tabBarImage
+        
         return viewController
+        
     }
   
  

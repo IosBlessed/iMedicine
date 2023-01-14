@@ -11,5 +11,7 @@ target 'iMedical' do
 	pod 'FirebaseStorage'
 	pod 'FirebaseAuth'
 	pod 'FirebaseDatabase'
+	pod 'FirebaseFirestore'
+	pod 'SDWebImage', :modular_headers => true
 
 end

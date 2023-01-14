@@ -6,23 +6,33 @@
 //
 import Foundation
 import UIKit
+import FirebaseFirestore
+import SwiftUI
+
 
 
 class TabletsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    @IBOutlet weak var tablets: UILabel!
+    private var medicaments:[Medicament] = []
     
     @IBOutlet weak var tabletsView: UITableView!
     
+    private let  loadingIndicator = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         
-        installBackgroundView()
+        setupLoadingIndicator()
+        
+        initializeBackgroundView()
+        
         initializeNavigationBar()
+        
         initializeTableView()
         
     }
+   
     
-    func installBackgroundView(){
+    func initializeBackgroundView(){
         
         let gradient = self.setGradient()
         view.layer.insertSublayer(gradient, at: 0)
@@ -30,12 +40,50 @@ class TabletsViewController: UIViewController,UITableViewDataSource,UITableViewD
         
     }
     
+    func setupLoadingIndicator(){
+        
+        loadingIndicator.frame = view.bounds
+        loadingIndicator.style = .large
+        loadingIndicator.color = UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 1.0)
+        
+    }
+    func showLoadingIndicator(){
+        
+        view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
+        loadingIndicator.isHidden = false
+        
+    }
+    func hideLoadingIndicator(){
+    
+        loadingIndicator.stopAnimating()
+        loadingIndicator.isHidden = true
+        loadingIndicator.removeFromSuperview()
+        
+    }
     func initializeTableView(){
+        // show indicator, while table didn't receive data from Firebase
+        showLoadingIndicator()
         
         tabletsView.dataSource = self
         tabletsView.delegate = self
-        tabletsView.backgroundColor = .none
+        tabletsView.backgroundColor = .clear
         tabletsView.register(UINib(nibName: "TabletsCell", bundle: nil), forCellReuseIdentifier: "tabletsCell")
+        
+        loadingIndicator.startAnimating()
+        
+        let medicamentViewModel = MedicamentViewModel()
+        
+        medicamentViewModel.getMedicaments { drugs in
+            
+            for drug in drugs!{
+                self.medicaments.append(drug)
+            }
+            
+            self.tabletsView.reloadData()
+            self.hideLoadingIndicator()
+            
+        }
         
     }
     
@@ -48,25 +96,28 @@ class TabletsViewController: UIViewController,UITableViewDataSource,UITableViewD
         ]
         
     }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        return self.medicaments.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tabletsCell", for: indexPath) as! TabletsCell
-            cell.imageMedicament.image = UIImage()
-            cell.titleMedicament.text = "Spazmalgon"
-            cell.typeMedicament.text = "Tablet"
-            cell.price.text = "250"
+        
+        let medicament = medicaments[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tabletsCell", for: indexPath) as! TabletsCellView
+        
+        cell.initalizeCell(medicament: medicament)
+        
        return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
         return 5
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -75,21 +126,13 @@ class TabletsViewController: UIViewController,UITableViewDataSource,UITableViewD
         headerView.backgroundColor = .clear
         
         return headerView
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
         return 200
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        let rowLayer = CALayer()
-        rowLayer.frame = cell.bounds
-        rowLayer.backgroundColor = UIColor(red: 48.0 / 255.0, green: 43.0 / 255.0, blue: 77.0 / 255.0, alpha: 1.0).cgColor
-        rowLayer.cornerRadius = 10
-        cell.layer.insertSublayer(rowLayer, at: 0)
-        
-    }
-  
+    }   
    
 }

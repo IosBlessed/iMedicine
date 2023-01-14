@@ -221,31 +221,24 @@
                                 <rect key="frame" x="20" y="154" width="374" height="630"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tabletsCell" rowHeight="200" id="eFx-NA-ID9" customClass="TabletsCell" customModule="iMedical" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tabletsCell" rowHeight="200" id="eFx-NA-ID9" customClass="TabletsCellView" customModule="iMedical" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="374" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eFx-NA-ID9" id="l9y-ho-iiY">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDh-cg-pMI">
-                                <rect key="frame" x="84" y="88" width="247" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2tD-ce-2P0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Ci-lk-waE"/>
                     <connections>
-                        <outlet property="tablets" destination="DDh-cg-pMI" id="Q10-CJ-90t"/>
                         <outlet property="tabletsView" destination="MRJ-MT-ipl" id="ZZ4-fJ-whu"/>
                     </connections>
                 </viewController>
@@ -393,7 +386,6 @@
         <!--Item-->
         <scene sceneID="Uxy-D0-zd9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FVs-xb-lkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BJh-Fw-zE9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="7XH-Xr-Fwa"/>
                     <toolbarItems/>
@@ -406,13 +398,13 @@
                         <segue destination="I0j-XH-b8a" kind="relationship" relationship="rootViewController" id="8nG-ra-skt"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FVs-xb-lkI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4021.739130434783" y="-271.20535714285711"/>
         </scene>
         <!--Item-->
         <scene sceneID="uMC-eG-TkC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T5I-Gr-dFa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tsr-ny-uqz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" title="Item" id="K5B-MI-Rc0"/>
                     <toolbarItems/>
@@ -425,6 +417,7 @@
                         <segue destination="5kI-8X-lf2" kind="relationship" relationship="rootViewController" id="yzt-vu-yoW"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T5I-Gr-dFa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4021.739130434783" y="478.79464285714283"/>
         </scene>
