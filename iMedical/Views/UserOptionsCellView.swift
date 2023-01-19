@@ -1,10 +1,11 @@
 //
-//  UserIOptionsCellView.swift
+//  UserOptionsCellView.swift
 //  iMedical
 //
 //  Created by Никита Данилович on 15.01.2023.
 //
 
+import Foundation
 import UIKit
 
 class UserOptionsCellView: UICollectionViewCell {
@@ -17,13 +18,42 @@ class UserOptionsCellView: UICollectionViewCell {
         
         super.awakeFromNib()
         
-       
+    
     }
-    func initializeCell(details:UserSelectorsCellModel){
+    
+    func setupCellText(){
         
-        self.backgroundColor = UIColor.yellow
-        self.imageUserCell.image = UIImage(named: details.imageCell)
-        self.labelUserCell.text = details.labelCellText
+        let textAtributes = [
+            NSAttributedString.Key.foregroundColor:UIColor.green,
+            NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12 )
+        ]
+        labelUserCell.textColor = UIColor.yellow
+        labelUserCell.attributedText = NSAttributedString(string:labelUserCell.text!, attributes:textAtributes)
+        
+    }
+    
+    func setupCellLayer(){
+        
+        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderWidth = 2
+        self.layer.cornerRadius = 10
+        
+    }
+    
+    func setupImgageView(){
+        
+    }
+    
+
+    
+    
+    func initializeCell(details:OptionsCellModel){
+        
+        imageUserCell.image = UIImage(named: details.imageCell)
+        labelUserCell.text = details.labelCellText
+        
+        setupCellLayer()
+        setupCellText()
         
         
     }
