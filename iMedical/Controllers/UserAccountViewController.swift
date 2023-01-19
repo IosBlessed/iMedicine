@@ -8,31 +8,89 @@ import Foundation
 import FirebaseAuth
 import UIKit
 
-class UserAccountViewController: UIViewController {
+class UserAccountViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+    
+    @IBOutlet weak var userOptionsCollectionView: UICollectionView!
+    
+   private var userOptions = UserOptionsCellModel()
     
     override func viewDidLoad() {
-        navigationItem.title = "MY ACCOUNT"
-        navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor:UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 0.8),
-            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 20),
-        ]
-     
-        print("That is user account")
+        
+        initializeNavigationBar()
+        
+        initializeBackgroundView()
+        
+        initializeUserCollectionView()
+        
+    }
+    
+    func initializeUserCollectionView(){
+        
+        userOptionsCollectionView.dataSource = self
+        userOptionsCollectionView.delegate = self
+        
+        userOptionsCollectionView.backgroundColor = .clear
+        userOptionsCollectionView.showsHorizontalScrollIndicator = false
+        userOptionsCollectionView.isPagingEnabled = false
+        userOptionsCollectionView.alwaysBounceHorizontal = false
+        userOptionsCollectionView.register(UINib(nibName: "UserOptionsCellView", bundle: nil), forCellWithReuseIdentifier: "userOptionsCell")
+        view.addSubview(userOptionsCollectionView)
+        userOptionsCollectionView.scrollToItem(at: IndexPath(row: 2, section: 0), at: [], animated: false)
+        
+        userOptions.localSetupOptionsList()
+        
+    }
+    
+    func initializeBackgroundView(){
+        
         let gradient = self.setGradient()
         view.layer.insertSublayer(gradient, at: 0)
         
     }
     
-    func setupHeaderTitle(){
-       
+    func initializeNavigationBar(){
+        
+        navigationItem.title = "MY ACCOUNT"
+        navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor:UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 0.8),
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 20),
+        ]
+        
+    }
+    var cellCarousel:Int = 100
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return cellCarousel
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-     
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let options = userOptions.getUserOptionsList()
+        
+        let cellOption = options[indexPath.row % options.count]
+        
+        let cell = userOptionsCollectionView.dequeueReusableCell(withReuseIdentifier: "userOptionsCell", for: indexPath) as! UserOptionsCellView
+        
+        cell.initializeCell(details: cellOption)
+        
+        guard indexPath.row == cellCarousel - 20 else{
+            
+            return cell
+            
+        }
+        
+        cellCarousel += 100
+        userOptionsCollectionView.reloadData()
+        
+        return cell
+        
     }
-    override func viewDidAppear(_ animated: Bool) {
-     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 100, height: 100 )
+        
     }
-    
-
+   
 }

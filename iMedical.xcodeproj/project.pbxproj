@@ -16,6 +16,8 @@
 		3732E51329631A86000EA112 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732E51229631A86000EA112 /* SignUpViewController.swift */; };
 		37425120296CB7CC00307273 /* TabletsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742511E296CB7CC00307273 /* TabletsCellView.swift */; };
 		37425121296CB7CC00307273 /* TabletsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3742511F296CB7CC00307273 /* TabletsCell.xib */; };
+		37507180297398C90053F938 /* UserOptionsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3750717E297398C90053F938 /* UserOptionsCellView.swift */; };
+		37507181297398C90053F938 /* UserOptionsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3750717F297398C90053F938 /* UserOptionsCellView.xib */; };
 		375337EB295F78EE007D1415 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375337EA295F78EE007D1415 /* AppDelegate.swift */; };
 		375337ED295F78EE007D1415 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375337EC295F78EE007D1415 /* SceneDelegate.swift */; };
 		375337F2295F78EE007D1415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375337F0295F78EE007D1415 /* Main.storyboard */; };
@@ -31,6 +33,7 @@
 		377C5B152962A1F00090AB3D /* RoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C5B142962A1F00090AB3D /* RoundButtonView.swift */; };
 		377C5B192962A8F10090AB3D /* company_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 377C5B182962A8F10090AB3D /* company_icon.png */; };
 		379260472967B6210034CA6A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379260462967B6210034CA6A /* TabBarViewController.swift */; };
+		379F2D652974FF43003289E1 /* UserOptionsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F2D642974FF43003289E1 /* UserOptionsCellModel.swift */; };
 		37D3E34C29650D21007774B4 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */; };
 		37E282402970A7AC00EF1D89 /* MedicamentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2823F2970A7AC00EF1D89 /* MedicamentViewModel.swift */; };
 		37E282452970E8AE00EF1D89 /* MedicamentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E282442970E8AE00EF1D89 /* MedicamentModel.swift */; };
@@ -48,6 +51,8 @@
 		3732E51229631A86000EA112 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3742511E296CB7CC00307273 /* TabletsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletsCellView.swift; sourceTree = "<group>"; };
 		3742511F296CB7CC00307273 /* TabletsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabletsCell.xib; sourceTree = "<group>"; };
+		3750717E297398C90053F938 /* UserOptionsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptionsCellView.swift; sourceTree = "<group>"; };
+		3750717F297398C90053F938 /* UserOptionsCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserOptionsCellView.xib; sourceTree = "<group>"; };
 		375337E7295F78EE007D1415 /* iMedical.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMedical.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		375337EA295F78EE007D1415 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		375337EC295F78EE007D1415 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		377C5B142962A1F00090AB3D /* RoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonView.swift; sourceTree = "<group>"; };
 		377C5B182962A8F10090AB3D /* company_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_icon.png; sourceTree = "<group>"; };
 		379260462967B6210034CA6A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		379F2D642974FF43003289E1 /* UserOptionsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptionsCellModel.swift; sourceTree = "<group>"; };
 		37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 		37E2823F2970A7AC00EF1D89 /* MedicamentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicamentViewModel.swift; sourceTree = "<group>"; };
 		37E282442970E8AE00EF1D89 /* MedicamentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicamentModel.swift; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 				37E2823F2970A7AC00EF1D89 /* MedicamentViewModel.swift */,
 				37662EAF29670C6B004A4AC2 /* UserModel.swift */,
 				37E282442970E8AE00EF1D89 /* MedicamentModel.swift */,
+				379F2D642974FF43003289E1 /* UserOptionsCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +167,8 @@
 				377C5B142962A1F00090AB3D /* RoundButtonView.swift */,
 				3742511E296CB7CC00307273 /* TabletsCellView.swift */,
 				3742511F296CB7CC00307273 /* TabletsCell.xib */,
+				3750717E297398C90053F938 /* UserOptionsCellView.swift */,
+				3750717F297398C90053F938 /* UserOptionsCellView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +286,7 @@
 				375337F7295F78EE007D1415 /* LaunchScreen.storyboard in Resources */,
 				3759F6CF295F7D06006DC324 /* GoogleService-Info.plist in Resources */,
 				370E6A0B296CAC6000A7CDB8 /* tablets.png in Resources */,
+				37507181297398C90053F938 /* UserOptionsCellView.xib in Resources */,
 				377C5B192962A8F10090AB3D /* company_icon.png in Resources */,
 				372EFE2C29678A2400BBCC99 /* account.png in Resources */,
 				375337F4295F78EE007D1415 /* Assets.xcassets in Resources */,
@@ -347,11 +357,13 @@
 				372EFE322967B14C00BBCC99 /* TabletsViewController.swift in Sources */,
 				3759F6DE295F8FD9006DC324 /* BackgroundScreenView.swift in Sources */,
 				3732E51129631A7A000EA112 /* SignInViewController.swift in Sources */,
+				379F2D652974FF43003289E1 /* UserOptionsCellModel.swift in Sources */,
 				375337EB295F78EE007D1415 /* AppDelegate.swift in Sources */,
 				3732E51329631A86000EA112 /* SignUpViewController.swift in Sources */,
 				375337ED295F78EE007D1415 /* SceneDelegate.swift in Sources */,
 				37D3E34C29650D21007774B4 /* ExtensionUIViewController.swift in Sources */,
 				37E282452970E8AE00EF1D89 /* MedicamentModel.swift in Sources */,
+				37507180297398C90053F938 /* UserOptionsCellView.swift in Sources */,
 				372EFE302967B0CF00BBCC99 /* UserAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -482,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
