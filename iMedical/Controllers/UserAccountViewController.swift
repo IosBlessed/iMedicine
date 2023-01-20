@@ -8,11 +8,13 @@ import Foundation
 import FirebaseAuth
 import UIKit
 
-class UserAccountViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+class UserAccountViewController: UIViewController {
     
-    @IBOutlet weak var userOptionsCollectionView: UICollectionView!
+    @IBOutlet weak var userOptionsCollectionView: UserOptionsCollectionView!
     
-   private var userOptions = UserOptionsCellModel()
+     var userOptions = UserOptionsCellModel()
+    
+     var cellCarousel:Int = 100
     
     override func viewDidLoad() {
         
@@ -29,15 +31,9 @@ class UserAccountViewController: UIViewController,UICollectionViewDataSource,UIC
         userOptionsCollectionView.dataSource = self
         userOptionsCollectionView.delegate = self
         
-        userOptionsCollectionView.backgroundColor = .clear
-        userOptionsCollectionView.showsHorizontalScrollIndicator = false
-        userOptionsCollectionView.isPagingEnabled = false
-        userOptionsCollectionView.alwaysBounceHorizontal = false
-        userOptionsCollectionView.register(UINib(nibName: "UserOptionsCellView", bundle: nil), forCellWithReuseIdentifier: "userOptionsCell")
-        view.addSubview(userOptionsCollectionView)
-        userOptionsCollectionView.scrollToItem(at: IndexPath(row: 2, section: 0), at: [], animated: false)
+        userOptionsCollectionView.setupCustomCollectionView()
         
-        userOptions.localSetupOptionsList()
+        view.addSubview(userOptionsCollectionView)
         
     }
     
@@ -57,40 +53,7 @@ class UserAccountViewController: UIViewController,UICollectionViewDataSource,UIC
         ]
         
     }
-    var cellCarousel:Int = 100
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return cellCarousel
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let options = userOptions.getUserOptionsList()
-        
-        let cellOption = options[indexPath.row % options.count]
-        
-        let cell = userOptionsCollectionView.dequeueReusableCell(withReuseIdentifier: "userOptionsCell", for: indexPath) as! UserOptionsCellView
-        
-        cell.initializeCell(details: cellOption)
-        
-        guard indexPath.row == cellCarousel - 20 else{
-            
-            return cell
-            
-        }
-        
-        cellCarousel += 100
-        userOptionsCollectionView.reloadData()
-        
-        return cell
-        
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: 100, height: 100 )
-        
-    }
+  
    
 }

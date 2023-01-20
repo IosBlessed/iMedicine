@@ -18,7 +18,15 @@ class UserOptionsCellView: UICollectionViewCell {
         
         super.awakeFromNib()
         
+        
+    }
     
+    func setupCellLayer(){
+        
+        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderWidth = 2
+        self.layer.cornerRadius = 10
+        
     }
     
     func setupCellText(){
@@ -32,19 +40,12 @@ class UserOptionsCellView: UICollectionViewCell {
         
     }
     
-    func setupCellLayer(){
-        
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.borderWidth = 2
-        self.layer.cornerRadius = 10
-        
-    }
-    
     func setupImgageView(){
         
+        imageUserCell.frame = CGRect(x: 20, y: 10, width: 60, height: 60)
+        imageUserCell.backgroundColor = .clear
+        
     }
-    
-
     
     
     func initializeCell(details:OptionsCellModel){
@@ -53,6 +54,7 @@ class UserOptionsCellView: UICollectionViewCell {
         labelUserCell.text = details.labelCellText
         
         setupCellLayer()
+        setupImgageView()
         setupCellText()
         
         
