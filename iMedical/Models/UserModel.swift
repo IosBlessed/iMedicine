@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseCore
 
-class UserModel: ObservableObject {
+class UserModel{
     
     enum AuthenticationState{
         // To check current state of user
@@ -24,21 +24,20 @@ class UserModel: ObservableObject {
         case signIn
         case signUp
         
-        
     }
     
-    @Published var email:String = ""
-    @Published var password:String = ""
-    @Published var confirmPassword:String = ""
+    var email:String = ""
+    var password:String = ""
+    var confirmPassword:String = ""
     
-    @Published var flow:AuthenticationFlow = .signIn
+    var flow:AuthenticationFlow = .signIn
     
-    @Published var authenticationState:AuthenticationState = .unauthenticated
+    var authenticationState:AuthenticationState = .unauthenticated
     
-    @Published var errorMessage:String = ""
-    @Published var displayName:String = ""
+    var errorMessage:String = ""
+    var displayName:String = ""
 
-    @Published var user: User?
+    var user: User?
     
     private var authStateHandle: AuthStateDidChangeListenerHandle?
     

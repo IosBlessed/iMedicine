@@ -32,6 +32,11 @@
 		37662EB229671AE4004A4AC2 /* ExtensionUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */; };
 		377C5B152962A1F00090AB3D /* RoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C5B142962A1F00090AB3D /* RoundButtonView.swift */; };
 		377C5B192962A8F10090AB3D /* company_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 377C5B182962A8F10090AB3D /* company_icon.png */; };
+		37845364297A015C00FEDB5E /* signOut.png in Resources */ = {isa = PBXBuildFile; fileRef = 37845363297A015C00FEDB5E /* signOut.png */; };
+		37845366297A069600FEDB5E /* editAccount.png in Resources */ = {isa = PBXBuildFile; fileRef = 37845365297A069600FEDB5E /* editAccount.png */; };
+		37845368297A06E300FEDB5E /* medicalCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 37845367297A06E300FEDB5E /* medicalCard.png */; };
+		3784536A297A08A600FEDB5E /* UserOptionsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37845369297A08A600FEDB5E /* UserOptionsCollectionView.swift */; };
+		3784536C297A0B9000FEDB5E /* ExtensionUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3784536B297A0B9000FEDB5E /* ExtensionUserAccount.swift */; };
 		379260472967B6210034CA6A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379260462967B6210034CA6A /* TabBarViewController.swift */; };
 		379F2D652974FF43003289E1 /* UserOptionsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F2D642974FF43003289E1 /* UserOptionsCellModel.swift */; };
 		37D3E34C29650D21007774B4 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */; };
@@ -69,6 +74,11 @@
 		37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserViewModel.swift; sourceTree = "<group>"; };
 		377C5B142962A1F00090AB3D /* RoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonView.swift; sourceTree = "<group>"; };
 		377C5B182962A8F10090AB3D /* company_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_icon.png; sourceTree = "<group>"; };
+		37845363297A015C00FEDB5E /* signOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signOut.png; sourceTree = "<group>"; };
+		37845365297A069600FEDB5E /* editAccount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editAccount.png; sourceTree = "<group>"; };
+		37845367297A06E300FEDB5E /* medicalCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medicalCard.png; sourceTree = "<group>"; };
+		37845369297A08A600FEDB5E /* UserOptionsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptionsCollectionView.swift; sourceTree = "<group>"; };
+		3784536B297A0B9000FEDB5E /* ExtensionUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserAccount.swift; sourceTree = "<group>"; };
 		379260462967B6210034CA6A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		379F2D642974FF43003289E1 /* UserOptionsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptionsCellModel.swift; sourceTree = "<group>"; };
 		37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 				3742511F296CB7CC00307273 /* TabletsCell.xib */,
 				3750717E297398C90053F938 /* UserOptionsCellView.swift */,
 				3750717F297398C90053F938 /* UserOptionsCellView.xib */,
+				37845369297A08A600FEDB5E /* UserOptionsCollectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +198,7 @@
 				3759F6E4295FAE7A006DC324 /* ExtensionBarBackButton.swift */,
 				37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */,
 				37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */,
+				3784536B297A0B9000FEDB5E /* ExtensionUserAccount.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,6 +206,9 @@
 		3759F6E1295FA73C006DC324 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				37845367297A06E300FEDB5E /* medicalCard.png */,
+				37845365297A069600FEDB5E /* editAccount.png */,
+				37845363297A015C00FEDB5E /* signOut.png */,
 				370E6A0A296CAC6000A7CDB8 /* tablets.png */,
 				37FD53842968A13F00D40C01 /* userIcon.png */,
 				372EFE2D29678AFE00BBCC99 /* stripes.png */,
@@ -291,8 +306,11 @@
 				372EFE2C29678A2400BBCC99 /* account.png in Resources */,
 				375337F4295F78EE007D1415 /* Assets.xcassets in Resources */,
 				37425121296CB7CC00307273 /* TabletsCell.xib in Resources */,
+				37845368297A06E300FEDB5E /* medicalCard.png in Resources */,
 				37FD53852968A13F00D40C01 /* userIcon.png in Resources */,
 				375337F2295F78EE007D1415 /* Main.storyboard in Resources */,
+				37845366297A069600FEDB5E /* editAccount.png in Resources */,
+				37845364297A015C00FEDB5E /* signOut.png in Resources */,
 				3759F6E7295FB0AC006DC324 /* main_screen.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +370,7 @@
 				37662EB229671AE4004A4AC2 /* ExtensionUserViewModel.swift in Sources */,
 				377C5B152962A1F00090AB3D /* RoundButtonView.swift in Sources */,
 				379260472967B6210034CA6A /* TabBarViewController.swift in Sources */,
+				3784536C297A0B9000FEDB5E /* ExtensionUserAccount.swift in Sources */,
 				3759F6E5295FAE7A006DC324 /* ExtensionBarBackButton.swift in Sources */,
 				37E282402970A7AC00EF1D89 /* MedicamentViewModel.swift in Sources */,
 				372EFE322967B14C00BBCC99 /* TabletsViewController.swift in Sources */,
@@ -362,6 +381,7 @@
 				3732E51329631A86000EA112 /* SignUpViewController.swift in Sources */,
 				375337ED295F78EE007D1415 /* SceneDelegate.swift in Sources */,
 				37D3E34C29650D21007774B4 /* ExtensionUIViewController.swift in Sources */,
+				3784536A297A08A600FEDB5E /* UserOptionsCollectionView.swift in Sources */,
 				37E282452970E8AE00EF1D89 /* MedicamentModel.swift in Sources */,
 				37507180297398C90053F938 /* UserOptionsCellView.swift in Sources */,
 				372EFE302967B0CF00BBCC99 /* UserAccountViewController.swift in Sources */,
