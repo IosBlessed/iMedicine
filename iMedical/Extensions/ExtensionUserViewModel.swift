@@ -62,10 +62,31 @@ extension UserModel{
         
     }
     
-    func signOut(){
+    func signOut()async -> Bool{
+        
+        authenticationState = .authenticating
+        flow = .signOut
+        
+        do{
+            
+            try Auth.auth().signOut()
+            authenticationState = .unauthenticated
+            resetUserDetails()
+            
+        }catch let signOutError as NSError{
+            
+            errorMessage = "FIR SignOut Error"
+            print("Error occured during the process of Sign Out: \(signOutError)")
+            return false
+            
+        }
+        
+        return true
         
     }
     func deleteAccount()async->Bool{
+        
         return true
+        
     }
 }
