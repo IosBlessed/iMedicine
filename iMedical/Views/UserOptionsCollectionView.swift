@@ -19,7 +19,6 @@ class UserOptionsCollectionView:UICollectionView{
         self.alwaysBounceHorizontal = false
         self.alwaysBounceVertical = false
         
-        
         self.register(
             UINib(nibName: "UserOptionsCellView", bundle: nil),
             forCellWithReuseIdentifier: "userOptionsCell"
