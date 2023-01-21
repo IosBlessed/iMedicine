@@ -46,7 +46,7 @@ extension UserAccountViewController:UICollectionViewDataSource,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let options = userOptions.getUserOptionsList()
-        print(options[indexPath.row].selectedOption)
+        print(options[indexPath.row % options.count].selectedOption)
         
     }
 }
