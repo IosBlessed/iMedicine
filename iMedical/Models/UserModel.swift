@@ -23,6 +23,7 @@ class UserModel{
         //User's flow
         case signIn
         case signUp
+        case signOut
         
     }
     
@@ -58,14 +59,8 @@ class UserModel{
         
     }
     
-    func switchFlow(){
-        
-        flow = flow == .signIn ? .signUp : .signIn
-        
-    }
     
-    
-    func reset(){
+    func resetUserDetails(){
         
         flow = .signIn
         email = ""
