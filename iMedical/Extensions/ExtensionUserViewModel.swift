@@ -62,7 +62,7 @@ extension UserModel{
         
     }
     
-    func signOut()async -> Bool{
+    func signOut() -> Bool{
         
         authenticationState = .authenticating
         flow = .signOut
@@ -70,7 +70,9 @@ extension UserModel{
         do{
             
             try Auth.auth().signOut()
+            
             authenticationState = .unauthenticated
+            
             resetUserDetails()
             
         }catch let signOutError as NSError{
@@ -84,6 +86,7 @@ extension UserModel{
         return true
         
     }
+    // Additional functionality for the user's acount
     func deleteAccount()async->Bool{
         
         return true

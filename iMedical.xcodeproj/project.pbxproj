@@ -36,12 +36,11 @@
 		37845366297A069600FEDB5E /* editAccount.png in Resources */ = {isa = PBXBuildFile; fileRef = 37845365297A069600FEDB5E /* editAccount.png */; };
 		37845368297A06E300FEDB5E /* medicalCard.png in Resources */ = {isa = PBXBuildFile; fileRef = 37845367297A06E300FEDB5E /* medicalCard.png */; };
 		3784536A297A08A600FEDB5E /* UserOptionsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37845369297A08A600FEDB5E /* UserOptionsCollectionView.swift */; };
-		3784536C297A0B9000FEDB5E /* ExtensionUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3784536B297A0B9000FEDB5E /* ExtensionUserAccount.swift */; };
+		3784536C297A0B9000FEDB5E /* ExtensionUserAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3784536B297A0B9000FEDB5E /* ExtensionUserAccountViewController.swift */; };
 		379260472967B6210034CA6A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379260462967B6210034CA6A /* TabBarViewController.swift */; };
 		379F2D652974FF43003289E1 /* UserOptionsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F2D642974FF43003289E1 /* UserOptionsCellModel.swift */; };
 		37D3E34C29650D21007774B4 /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */; };
 		37E282402970A7AC00EF1D89 /* MedicamentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E2823F2970A7AC00EF1D89 /* MedicamentViewModel.swift */; };
-		37E282452970E8AE00EF1D89 /* MedicamentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E282442970E8AE00EF1D89 /* MedicamentModel.swift */; };
 		37FD53852968A13F00D40C01 /* userIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37FD53842968A13F00D40C01 /* userIcon.png */; };
 		B65D757A6750047D3E4AE1A9 /* Pods_iMedical.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E771E8A57316FD4C32AF827 /* Pods_iMedical.framework */; };
 /* End PBXBuildFile section */
@@ -78,12 +77,11 @@
 		37845365297A069600FEDB5E /* editAccount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editAccount.png; sourceTree = "<group>"; };
 		37845367297A06E300FEDB5E /* medicalCard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medicalCard.png; sourceTree = "<group>"; };
 		37845369297A08A600FEDB5E /* UserOptionsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptionsCollectionView.swift; sourceTree = "<group>"; };
-		3784536B297A0B9000FEDB5E /* ExtensionUserAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserAccount.swift; sourceTree = "<group>"; };
+		3784536B297A0B9000FEDB5E /* ExtensionUserAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserAccountViewController.swift; sourceTree = "<group>"; };
 		379260462967B6210034CA6A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		379F2D642974FF43003289E1 /* UserOptionsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOptionsCellModel.swift; sourceTree = "<group>"; };
 		37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 		37E2823F2970A7AC00EF1D89 /* MedicamentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicamentViewModel.swift; sourceTree = "<group>"; };
-		37E282442970E8AE00EF1D89 /* MedicamentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicamentModel.swift; sourceTree = "<group>"; };
 		37FD53842968A13F00D40C01 /* userIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userIcon.png; sourceTree = "<group>"; };
 		8E771E8A57316FD4C32AF827 /* Pods_iMedical.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMedical.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EE7CDABF311D29BAF435DD /* Pods-iMedical.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMedical.release.xcconfig"; path = "Target Support Files/Pods-iMedical/Pods-iMedical.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			children = (
 				37E2823F2970A7AC00EF1D89 /* MedicamentViewModel.swift */,
 				37662EAF29670C6B004A4AC2 /* UserModel.swift */,
-				37E282442970E8AE00EF1D89 /* MedicamentModel.swift */,
 				379F2D642974FF43003289E1 /* UserOptionsCellModel.swift */,
 			);
 			path = Models;
@@ -198,7 +195,7 @@
 				3759F6E4295FAE7A006DC324 /* ExtensionBarBackButton.swift */,
 				37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */,
 				37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */,
-				3784536B297A0B9000FEDB5E /* ExtensionUserAccount.swift */,
+				3784536B297A0B9000FEDB5E /* ExtensionUserAccountViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,7 +367,7 @@
 				37662EB229671AE4004A4AC2 /* ExtensionUserViewModel.swift in Sources */,
 				377C5B152962A1F00090AB3D /* RoundButtonView.swift in Sources */,
 				379260472967B6210034CA6A /* TabBarViewController.swift in Sources */,
-				3784536C297A0B9000FEDB5E /* ExtensionUserAccount.swift in Sources */,
+				3784536C297A0B9000FEDB5E /* ExtensionUserAccountViewController.swift in Sources */,
 				3759F6E5295FAE7A006DC324 /* ExtensionBarBackButton.swift in Sources */,
 				37E282402970A7AC00EF1D89 /* MedicamentViewModel.swift in Sources */,
 				372EFE322967B14C00BBCC99 /* TabletsViewController.swift in Sources */,
@@ -382,7 +379,6 @@
 				375337ED295F78EE007D1415 /* SceneDelegate.swift in Sources */,
 				37D3E34C29650D21007774B4 /* ExtensionUIViewController.swift in Sources */,
 				3784536A297A08A600FEDB5E /* UserOptionsCollectionView.swift in Sources */,
-				37E282452970E8AE00EF1D89 /* MedicamentModel.swift in Sources */,
 				37507180297398C90053F938 /* UserOptionsCellView.swift in Sources */,
 				372EFE302967B0CF00BBCC99 /* UserAccountViewController.swift in Sources */,
 			);

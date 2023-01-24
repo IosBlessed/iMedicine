@@ -59,7 +59,6 @@ class UserModel{
         
     }
     
-    
     func resetUserDetails(){
         
         flow = .signIn

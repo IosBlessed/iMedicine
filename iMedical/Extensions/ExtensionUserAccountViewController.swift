@@ -24,6 +24,7 @@ extension UserAccountViewController:UICollectionViewDataSource,UICollectionViewD
          
          let cell = userOptionsCollectionView.dequeueReusableCell(withReuseIdentifier: "userOptionsCell", for: indexPath) as! UserOptionsCellView
          
+         
          cell.initializeCell(details: cellOption)
          
          guard indexPath.row == cellCarousel - 20 else{
@@ -46,7 +47,13 @@ extension UserAccountViewController:UICollectionViewDataSource,UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let options = userOptions.getUserOptionsList()
-        print(options[indexPath.row % options.count].selectedOption)
+        
+        let selectedCell = options[indexPath.row % options.count]
+        
+        userOptions.selectedOption = selectedCell.selectedOption
+        
+        selectedCellAction()
+        
         
     }
 }
