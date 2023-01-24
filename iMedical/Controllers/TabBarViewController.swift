@@ -13,8 +13,9 @@ class TabBarViewController: UITabBarController {
     let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
-        
+    
         createTabBarLayer()
+        
         createTabBarItems()
         
     }

@@ -60,6 +60,7 @@ class StartScreenController: UIViewController, UINavigationControllerDelegate{
     }
   
     override func viewDidAppear(_ animated: Bool) {
+       
         guard user.authenticationState == .authenticated else{return}
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? TabBarViewController{
