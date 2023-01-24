@@ -1,29 +1,52 @@
 //
-//  ExtensionUserAccountViewController.swift
+//  ExtensionUserAccount.swift
 //  iMedical
 //
-//  Created by Никита Данилович on 08.01.2023.
+//  Created by Никита Данилович on 19.01.2023.
 //
 
 import Foundation
 import UIKit
-extension UserAccountViewController:UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return news.news.count
+
+extension UserAccountViewController:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+     
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+         
+         return cellCarousel
+         
+     }
+     
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         
+         let options = userOptions.getUserOptionsList()
+         
+         let cellOption = options[indexPath.row % options.count]
+         
+         let cell = userOptionsCollectionView.dequeueReusableCell(withReuseIdentifier: "userOptionsCell", for: indexPath) as! UserOptionsCellView
+         
+         cell.initializeCell(details: cellOption)
+         
+         guard indexPath.row == cellCarousel - 20 else{
+             
+             return cell
+             
+         }
+         
+         cellCarousel += 100
+         userOptionsCollectionView.reloadData()
+         
+         return cell
+         
+     }
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+         
+         return CGSize(width: 100, height: 100 )
+         
+     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let options = userOptions.getUserOptionsList()
+        print(options[indexPath.row % options.count].selectedOption)
+        
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewsCell", for: indexPath) as! NewsCell
-        cell.setupCell(news: news.news[indexPath.item])
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        print("Width of cell: \(collectionView.bounds.width/2 - 20)")
-        print("Height of cell: \(collectionView.bounds.height - 10)")
-        return CGSize(width: collectionView.bounds.width/2 - 15, height: collectionView.bounds.height - 10)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
 }

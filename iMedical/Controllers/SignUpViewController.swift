@@ -55,7 +55,7 @@ class SignUpViewController: UIViewController {
     @IBAction func createAccountButton(_ sender: RoundButtonView) {
         
         guard self.checkIfFieldsSatisfy(requiredFields: requiredFields, textFields: textFields) else {
-            self.showAlertMessage(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
+            self.alertIncorrectInput(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
             return
         }
         Task{

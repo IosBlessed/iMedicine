@@ -56,7 +56,7 @@ class SignInViewController: UIViewController {
     @IBAction func loginButton( sender:RoundButtonView!){
         
         guard self.checkIfFieldsSatisfy(requiredFields: requiredFields, textFields: inputFields) else {
-            self.showAlertMessage(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
+            self.alertIncorrectInput(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
             return
         }
         Task{
