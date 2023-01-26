@@ -123,8 +123,9 @@ class TabletsCellView:UITableViewCell{
     func initalizeCell(medicament:Medicament){
         
         setupCustomStyle(medicament: medicament)
-        
-        imageMedicament.sd_setImage(with: URL(string: medicament.imageLink))
+        // Using SDWEBIMAGE for async downloading 
+        imageMedicament.sd_setImage(with: URL(string: medicament.imageLink),placeholderImage: UIImage(named: "company_icon.png"))
+
         titleMedicament.text = medicament.name
         helpsFor.text = randSymptom(medicament.symptoms)
         typeMedicament.text = medicament.typeOfUsing
