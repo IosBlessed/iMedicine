@@ -35,7 +35,7 @@ class UserOptionsCellView: UICollectionViewCell {
     
     private func setupCellText(){
         
-        let textColor = UIColor.black//UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 1.0)
+        let textColor = UIColor.black //UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 1.0)
         
         let textAtributes = [
             NSAttributedString.Key.foregroundColor:textColor,

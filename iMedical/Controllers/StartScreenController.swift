@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 import FirebaseAuth
 
-class StartScreenController: UIViewController, UINavigationControllerDelegate{
+class StartScreenController: UIViewController{
 
 
     @IBOutlet weak var startScreen: BackgroundScreenView!
@@ -23,22 +23,30 @@ class StartScreenController: UIViewController, UINavigationControllerDelegate{
     var user = UserModel()
     
     override func viewDidLoad() {
+        
         mainView = startScreen.setupBackgroundView()
         view.addSubview(mainView)
         view.addSubview(actionButtonsView)
         performBackgroundAnimation()
 
     }
+    
     func performBackgroundAnimation(){
+        
         backgroundAnimationStarts()
         backgroundAnimationFinish()
+        
     }
+    
     func backgroundAnimationStarts(){
+        
         mainView.center.y -= view.bounds.height
          for btn in actionButtons{
              btn.alpha = 0.0
          }
+        
     }
+    
     func backgroundAnimationFinish(){
         
         UIView.animate(withDuration: 0.5, animations: {
@@ -53,10 +61,13 @@ class StartScreenController: UIViewController, UINavigationControllerDelegate{
         }
         
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let backItem = UIBarButtonItem()
         backItem.setBackButtonItem(title: "Home")
         navigationItem.backBarButtonItem = backItem
+        
     }
   
     override func viewDidAppear(_ animated: Bool) {

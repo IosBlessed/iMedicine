@@ -51,45 +51,14 @@ class UserAccountViewController: UIViewController {
     }
     
     func initializeUserCollectionView(){
-        
+        // Whole logic desribed in ExtensionUserAccountViewController.swift 
         userOptionsCollectionView.dataSource = self
         userOptionsCollectionView.delegate = self
     
         userOptionsCollectionView.setupCustomCollectionView()
         
     }
-    
-    func processSignOut(){
-        
-        self.alertSignOut(
-            alertTitle: "Don't say goodbye...",
-            alertMessage: "Are you sure that you want to exit?",
-            exitButtonTitle: "See you soon!",
-            noButtonTitle: "No",
-            handler: { _ in
-                
-                print("Yes, I exist")
-               // Module of signOut implementation
-                print(self.user.displayName)
-            })
-    }
-    // Call of function is in -> ExtensionUserAccountViewController.swift
-    func selectedCellAction(){
-       
-        let selectedOption = userOptions.selectedOption
-        
-        switch(selectedOption){
-            case .signOut:
-                processSignOut()
-            case .editAccount:
-                break;
-            case .medicalCard:
-                break;
-            default:
-                print("No cases of user options selected")
-        }
-       
-    }
+     
     
     override func viewDidLoad() {
         
