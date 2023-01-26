@@ -9,6 +9,70 @@ import Foundation
 import UIKit
 
 extension UserAccountViewController:UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    
+    
+   private func selectedCellAction(){
+       
+        let selectedOption = userOptions.selectedOption
+        
+        switch(selectedOption){
+            
+            case .signOut:
+                processSignOut()
+            break;
+            case .editAccount:
+                processEditAccount()
+                break;
+            case .medicalCard:
+                break;
+            default:
+                print("No cases of user options selected")
+            
+        }
+       
+    }
+    
+    private func processSignOut(){
+         
+         self.alertSignOut(
+             alertTitle: "Don't say goodbye...",
+             alertMessage: "Are you sure that you want to exit?",
+             exitButtonTitle: "See you soon!",
+             noButtonTitle: "No",
+             handler: { _ in
+                 // Be carefull, self.user -> instance of class(!!!)
+                 let user = self.user
+                 
+                 guard user.signOut() else {
+                     
+                     print(user.errorMessage)
+                     
+                     return
+                     
+                 }
+                 
+                 user.resetUserDetails()
+                 
+                 self.backToStartScreen()
+                 
+                 
+             })
+     }
+     
+     func backToStartScreen(){
+         
+         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         // Identifier's name => Navigation Controller
+         
+         let startScreenVC = storyboard.instantiateViewController(withIdentifier: "startScreenNC")
+         startScreenVC.modalPresentationStyle = .fullScreen
+         present(startScreenVC,animated:true)
+         
+     }
+     
+    private func processEditAccount(){
+         
+     }
      
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          
@@ -27,7 +91,7 @@ extension UserAccountViewController:UICollectionViewDataSource,UICollectionViewD
          
          cell.initializeCell(details: cellOption)
          
-         guard indexPath.row == cellCarousel - 20 else{
+         guard indexPath.row == cellCarousel - 30 else{
              
              return cell
              
@@ -56,4 +120,5 @@ extension UserAccountViewController:UICollectionViewDataSource,UICollectionViewD
         
         
     }
+    
 }
