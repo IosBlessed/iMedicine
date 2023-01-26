@@ -14,7 +14,7 @@
         <!--Navigation Controller-->
         <scene sceneID="89x-uT-N1q">
             <objects>
-                <navigationController id="XPX-DG-Zbx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="startScreenNC" id="XPX-DG-Zbx" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qX3-F8-MBK">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -25,7 +25,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bky-to-irV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-936" y="108"/>
+            <point key="canvasLocation" x="-893" y="108"/>
         </scene>
         <!--Start Screen-->
         <scene sceneID="tne-QT-ifu">
@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2L-Xc-4x7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253.6231884057972" y="-271.20535714285711"/>
+            <point key="canvasLocation" x="1254" y="-224"/>
         </scene>
         <!--Me-->
         <scene sceneID="jnM-CA-IKh">
