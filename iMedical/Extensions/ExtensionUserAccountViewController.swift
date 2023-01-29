@@ -32,6 +32,11 @@ extension UserAccountViewController:UICollectionViewDataSource,UICollectionViewD
        
     }
     
+    private func processEditAccount(){
+        
+        
+    }
+    
     private func processSignOut(){
          
          self.alertSignOut(
@@ -67,10 +72,6 @@ extension UserAccountViewController:UICollectionViewDataSource,UICollectionViewD
          let startScreenVC = storyboard.instantiateViewController(withIdentifier: "startScreenNC")
          startScreenVC.modalPresentationStyle = .fullScreen
          present(startScreenVC,animated:true)
-         
-     }
-     
-    private func processEditAccount(){
          
      }
      
