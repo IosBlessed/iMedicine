@@ -9,21 +9,28 @@ import UIKit
 
 class SetupAccountViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    private func initializeNavigationBar(){
+        navigationItem.title = "Setup Account"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    private func initializeBackgroundView(){
+        // setGragient -> ExtensionUIViewController.swift
+        let gradient = self.setGradient()
+        
+        view.layer.insertSublayer(gradient, at: 0)
+        
     }
-    */
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        initializeNavigationBar()
+        
+        initializeBackgroundView()
+    
+    }
+
 
 }
