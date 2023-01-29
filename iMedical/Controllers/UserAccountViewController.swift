@@ -13,6 +13,8 @@ class UserAccountViewController: UIViewController {
     
     @IBOutlet weak var mainContentScrollView: UIScrollView!
     
+    @IBOutlet weak var createAccountButton: RoundButtonView!
+    
     @IBOutlet weak var userOptionsCollectionView: UserOptionsCollectionView!
     
     var userOptions = UserOptionsCellModel()
@@ -24,11 +26,16 @@ class UserAccountViewController: UIViewController {
     
     func initializeNavigationBar(){
         
+        let backButton = UIBarButtonItem()
+        backButton.title = "Menu"
+        backButton.tintColor = UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 0.8)
+        
         navigationItem.title = "MY ACCOUNT"
         navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor:UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 0.8),
             NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 20),
         ]
+        navigationItem.backBarButtonItem = backButton
         
     }
     
@@ -60,6 +67,26 @@ class UserAccountViewController: UIViewController {
     }
      
     
+    func checkIfUserAccountEdited(){
+        
+        createAccountButton.isHidden = true
+        createAccountButton.layer.opacity = 0.0
+        
+        user.getUserAccount(completion: {
+            userAcc in
+            
+            let name = userAcc.username
+            
+            guard name != "Unknown user" else{
+                self.createAccountButton.isHidden = false
+                UIView.animate(withDuration: 1, animations: {
+                    self.createAccountButton.layer.opacity = 1.0
+                })
+                return
+            }
+        })
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -72,5 +99,14 @@ class UserAccountViewController: UIViewController {
         
         initializeUserCollectionView()
         
+        checkIfUserAccountEdited()
+        
+    }
+    
+    
+    @IBAction func editAccount(_ sender: Any) {
+        // performSegue(withIdentifier: "setupAcc", sender: nil)
+        
+        self.navigationController?.pushViewController(SetupAccountViewController(), animated: true)
     }
 }
