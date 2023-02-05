@@ -7,32 +7,6 @@
 import Foundation
 import UIKit
 
-// MARK: -> Contains whole settings from accountSections.json file
-struct AccountSectionsObjects:Decodable{
-    
-    let settings:[SectionObject]
-    
-}
-// MARK: -> Each object of AccountSectionObjects is below:
-struct SectionObject:Decodable{
-    
-    let id: Int
-    let section:String
-    let text:String
-    let options:[String]?
-    let countries:[SectionCountries]?
-    
-}
-// MARK: -> Optional(because only section country has it inside)
-struct SectionCountries:Decodable{
-    
-    let title:String
-    let flag:String
-    let capital:String
-    let population:String
-    let cities:[String]
-    
-}
 
 class SetupAccountCollectionView: UICollectionView {
 // MARK: ExtensionSetupAccountViewController.swift -> flow's logic
@@ -67,7 +41,7 @@ class SetupAccountCollectionView: UICollectionView {
         collectionViewLayout?.minimumLineSpacing = 20
         collectionViewLayout?.invalidateLayout()
     }
-    
+    // MARK: Check please AccountSettingsSectionModel ->
     func initializeSettingsSectionsJSON() -> [SectionObject]{
         
         if let jsonPath = Bundle.main.url(forResource: "accountSections", withExtension: "json"){
