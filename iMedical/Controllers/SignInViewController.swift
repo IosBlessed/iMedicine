@@ -22,37 +22,58 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var loginField: UITextField!
     
     @IBOutlet weak var passwordField: UITextField!
-    
-   
-    var login = AuthenticationViewModel()
+        
+    var authentication = UserModel()
     
     override func viewDidLoad() {
+        
         let mainView = backgroundView.setupBackgroundView()
         backgroundView.addSubview(mainView)
         backgroundView.sendSubviewToBack(mainView)
         backgroundView.addSubview(credentialsView)
         
     }
-    func loginUser() async{
-        
-        login.email = loginField.text!
-        login.password = passwordField.text!
-        let userExists = await login.signInWithEmailPassword()
-        // Here comes Next VC
-      
-        
-    }
-    @IBAction func loginButton( sender:RoundButtonView!){
-        guard self.checkIfFieldsNotEmpty(requiredFields: requiredFields, textFields: inputFields) else {
-            self.showAlertMessage(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
-            return
-        }
-            Task{
-               await loginUser()
-            }
     
+    func loginUser()async{
+        
+        authentication.email = loginField.text!
+        authentication.password = passwordField.text!
+        
+        guard await authentication.signInWithEmailPassword() else{
+            
+            print("Authentication Error: \(authentication.errorMessage)");
+            return
+            
         }
-       
+        
+       print("Successful authentication")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? TabBarViewController{
+            
+            tabBarVC.navigationItem.hidesBackButton = true
+            tabBarVC.modalPresentationStyle = .fullScreen
+            present(tabBarVC, animated: true)
+            
+        }
         
     }
-// .setGradientBackground(colors:[UIColor(displayP3Red: 0.102, green: 0.176, blue: 0.192, alpha: 1.0).cgColor,UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 1.0).cgColor])
+    
+    @IBAction func loginButton( sender:RoundButtonView!){
+        
+        guard self.checkIfFieldsSatisfy(requiredFields: requiredFields, textFields: inputFields) else {
+            
+            self.alertIncorrectInput(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
+            
+            return
+            
+        }
+        Task{
+            
+            await loginUser()
+            
+        }
+    }
+    
+}

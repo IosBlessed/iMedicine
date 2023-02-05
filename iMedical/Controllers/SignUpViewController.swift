@@ -17,6 +17,13 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet var textFields:[UITextField]!
     
+    @IBOutlet weak var emailField: UITextField!
+    
+    @IBOutlet weak var passwordField: UITextField!
+    
+    @IBOutlet weak var confirmPasswordField: UITextField!
+    var authentication = UserModel()
+    
     override func viewDidLoad() {
 
         let mainView = backgroundView.setupBackgroundView()
@@ -25,11 +32,34 @@ class SignUpViewController: UIViewController {
 
     }
     
+    func createUserAccount() async {
+        
+        authentication.email = emailField.text!
+        authentication.password = passwordField.text!
+        authentication.confirmPassword = confirmPasswordField.text!
+        
+        guard await authentication.signUpWithEmailPassword() else{ print("Authentication error:\(authentication.errorMessage)");
+            return
+        }
+        print("Account created successfully!")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? TabBarViewController{
+            tabBarVC.navigationItem.hidesBackButton = true
+            show(tabBarVC, sender: nil)
+        }
+        
+    }
+    
     // func checkIfFieldsNotEmpty, showAlertMessage -> extensions of UIViewController
     @IBAction func createAccountButton(_ sender: RoundButtonView) {
-        guard self.checkIfFieldsNotEmpty(requiredFields: requiredFields, textFields: textFields) else {
-            self.showAlertMessage(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
+        
+        guard self.checkIfFieldsSatisfy(requiredFields: requiredFields, textFields: textFields) else {
+            self.alertIncorrectInput(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
             return
+        }
+        Task{
+            await createUserAccount()
         }
         
     }

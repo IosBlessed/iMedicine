@@ -1,0 +1,72 @@
+{
+    "settings": [{
+            "id": 0,
+            "section": "username",
+            "text": "Please, come up with your username"
+        },
+        {
+            "id": 1,
+            "section": "age",
+            "text": "Please, select your age"
+        },
+        {
+            "id": 2,
+            "section": "gender",
+            "text": "Please, choose your gender",
+            "options": ["Male", "Female", "Prefer not to tell"]
+        },
+        {
+            "id": 3,
+            "section": "country",
+            "text": "Please, choose your country",
+            "countries": [{
+                    "title": "Moldova",
+                    "flag": "🇲🇩",
+                    "capital": "Chishinew",
+                    "population": "2.6 mil.",
+                    "cities": ["Chishinew", "Balti", "Kagul"]
+                },
+                {
+                    "title": "United Kingdom",
+                    "flag": "🇬🇧",
+                    "capital": "London",
+                    "population": "67.4 mil.",
+                    "cities": ["London", "Manchester", "Kagul"]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "section": "city",
+            "text": "Please, choose your city"
+        },
+        {
+            "id": 5,
+            "section": "bloodType",
+            "text": "Please, select your blood type",
+            "options": ["A+", "A-", "B+", "B-", "C+", "C-", "D+", "D-"]
+        },
+        {
+            "id": 6,
+            "section": "race",
+            "text": "Please, choose your race",
+            "options": ["European", "Asian", "Black"]
+        },
+        {
+            "id": 7,
+            "section": "metricSystem",
+            "text": "Please, select your metric system (US/world)",
+            "options": ["US", "world"]
+        },
+        {
+            "id": 8,
+            "section": "weight",
+            "text": "Please, insert your weight"
+        },
+        {
+            "id": 9,
+            "section": "height",
+            "text": "Please, insert your height"
+        }
+    ]
+}
