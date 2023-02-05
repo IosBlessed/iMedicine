@@ -25,12 +25,26 @@ extension UIViewController{
         return gradient
         
     }
-    
-    func showAlertMessage(alertTitle: String,alertMessage:String, alertButtonTitle:String){
+   
+    func alertSignOut(alertTitle: String,alertMessage:String, exitButtonTitle:String,noButtonTitle:String, handler:@escaping (UIAlertAction) -> Void){
         
         let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
-        let button = UIAlertAction(title: alertButtonTitle, style: .default)
-        alert.addAction(button)
+        
+        let exitButton = UIAlertAction(title: exitButtonTitle, style: .destructive, handler: handler)
+        
+        let stayButton = UIAlertAction(title: noButtonTitle, style: .default)
+        
+        alert.addAction(exitButton)
+        alert.addAction(stayButton)
+        
+        self.present(alert, animated: true)
+    }
+    
+    func alertIncorrectInput(alertTitle: String,alertMessage:String, alertButtonTitle:String){
+        
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let buttonOk = UIAlertAction(title: alertButtonTitle, style: .default)
+        alert.addAction(buttonOk)
         self.present(alert, animated: true)
         
     }

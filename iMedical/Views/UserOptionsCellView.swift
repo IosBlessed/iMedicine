@@ -21,26 +21,33 @@ class UserOptionsCellView: UICollectionViewCell {
         
     }
     
-    func setupCellLayer(){
-        
-        self.layer.borderColor = UIColor.red.cgColor
-        self.layer.borderWidth = 2
-        self.layer.cornerRadius = 10
-        
+   private func setupCellLayer(){
+       // Initialization block
+       let cellLayer = CAShapeLayer()
+       
+       cellLayer.frame = self.bounds
+       
+       cellLayer.backgroundColor = UIColor.white.cgColor
+       cellLayer.cornerRadius = 10
+
+       self.layer.insertSublayer(cellLayer, at: 0)
     }
     
-    func setupCellText(){
+    private func setupCellText(){
+        
+        let textColor = UIColor.black //UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 1.0)
         
         let textAtributes = [
-            NSAttributedString.Key.foregroundColor:UIColor.green,
-            NSAttributedString.Key.font:UIFont.systemFont(ofSize: 12 )
+            NSAttributedString.Key.foregroundColor:textColor,
+            NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 13 )
         ]
-        labelUserCell.textColor = UIColor.yellow
+        
+        
         labelUserCell.attributedText = NSAttributedString(string:labelUserCell.text!, attributes:textAtributes)
         
     }
     
-    func setupImgageView(){
+    private func setupImgageView(){
         
         imageUserCell.frame = CGRect(x: 20, y: 10, width: 60, height: 60)
         imageUserCell.backgroundColor = .clear
@@ -56,7 +63,6 @@ class UserOptionsCellView: UICollectionViewCell {
         setupCellLayer()
         setupImgageView()
         setupCellText()
-        
         
     }
 

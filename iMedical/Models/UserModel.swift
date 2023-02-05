@@ -7,7 +7,9 @@
 
 import Foundation
 import FirebaseAuth
-import FirebaseCore
+import FirebaseStorage
+import FirebaseFirestore
+import FirebaseDatabase
 
 class UserModel{
     
@@ -23,7 +25,60 @@ class UserModel{
         //User's flow
         case signIn
         case signUp
+        case signOut
         
+    }
+    
+    struct UserAccount{
+        
+        var username:String
+        var age:Int
+        var metricSystem:String
+        var country:String
+        var city:String
+        var bloodType:String
+        var race:String
+        var gender:String
+        var email:String
+        var weight:Float
+        var height:Float
+        
+        init(
+            username:String,
+            age:Int,
+            metricSystem:String,
+            country:String,
+            city:String,
+            bloodType:String,
+            race:String,
+            gender:String,
+            email:String,
+            weight:Float,
+            height:Float
+        ){
+                
+                self.username = username == "" ? "Unknown user" : username
+                
+                self.age = age <= 0 ? 0 : age
+                
+                self.metricSystem = metricSystem == "" ? "world" : metricSystem
+                
+                self.country = country == "" ? "Unknown country" : country
+                
+                self.city = city == "" ? "Unknown city" : city
+                
+                self.bloodType = bloodType == "" ? "Unknown blood type" : bloodType
+                
+                self.race = race == "" ? "Unknown race" : race
+                
+                self.gender = gender == "" ? "Unknown gender" : gender
+                
+                self.email = email == "" ? "Unknown email" : email
+                
+                self.weight = weight <= 0.0 ? 0.0 : weight
+            self.height = height <= 0.0 ? 0.0 : height
+                
+        }
     }
     
     var email:String = ""
@@ -54,18 +109,77 @@ class UserModel{
             self.user = user
             self.authenticationState = user == nil ? .unauthenticated : .authenticated
             self.displayName = user?.email ?? "Unknown user"
+            
         })
-        
     }
     
-    func switchFlow(){
+    func getUserAccount(completion:@escaping (UserAccount) -> Void){
         
-        flow = flow == .signIn ? .signUp : .signIn
+        let db = Firestore.firestore()
         
-    }
+        guard self.user != nil else{
+            print("Current user doesn't setted up account!")
+            return
+        }
+        db.collection("userAccounts").document(self.user!.uid).addSnapshotListener(){
+            (DocumentSnapshot,error) in
+
+            guard error == nil else{
+                
+                print(error!.localizedDescription)
+                return
+                
+            }
+            
+            guard let user = DocumentSnapshot!.data() else {
+                
+                print("Invalid reference of userAccounts collection!")
+                return
+                
+                
+            }
+                
+                let email = user["email"] as? String ?? "Unknown email data type"
+                
+                let username = user["username"] as? String ?? "Unknown username data type"
+                
+                let age = user["age"] as? Int ?? 0
+                
+                let bloodType = user["bloodType"] as? String ?? "Unknown blood data type"
+                
+                let city = user["city"] as? String ?? "Unknown city data type"
+                
+                let country = user["country"] as? String ?? "Unknown country data type"
+                
+                let gender = user["gender"] as? String ?? "Unknown gender data type"
+                
+                let metricSystem = user["metricSystem"] as? String ?? "Unknown metricSystem data type"
+                
+                let race = user["race"] as? String ?? "Unknown race data type"
+                
+                let weight = user["weight"] as? Float ?? 0.0
+                
+                let height = user["height"] as? Float ?? 0.0
+                
+                completion(UserAccount(
+                    username: username,
+                    age: age,
+                    metricSystem: metricSystem,
+                    country: country,
+                    city: city,
+                    bloodType: bloodType,
+                    race: race,
+                    gender: gender,
+                    email: email,
+                    weight: weight,
+                    height:height
+                ))
+         
+        }
+        
+        }
     
-    
-    func reset(){
+    func resetUserDetails(){
         
         flow = .signIn
         email = ""

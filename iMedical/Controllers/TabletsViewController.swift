@@ -107,7 +107,7 @@ class TabletsViewController: UIViewController,UITableViewDataSource,UITableViewD
         
         let medicament = medicaments[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "tabletsCell", for: indexPath) as! TabletsCellView
-        
+        // 
         cell.initalizeCell(medicament: medicament)
         
        return cell

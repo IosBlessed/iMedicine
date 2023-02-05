@@ -23,7 +23,7 @@ extension UserModel{
             authenticationState = .authenticated
             displayName = user?.email ?? "Unknown user"
         }catch{
-            print("Sign In Error: \(error)")
+            print("Sign In Error: \(error.localizedDescription)")
             errorMessage = error.localizedDescription
             authenticationState = .unauthenticated
             
@@ -52,7 +52,7 @@ extension UserModel{
             
         }catch{
             
-            print("Sign Up Error: \(error)")
+            print("Sign Up Error: \(error.localizedDescription)")
             errorMessage = error.localizedDescription
             authenticationState = .unauthenticated
             return false
@@ -62,10 +62,34 @@ extension UserModel{
         
     }
     
-    func signOut(){
+    func signOut() -> Bool{
+        
+        authenticationState = .authenticating
+        flow = .signOut
+        
+        do{
+            
+            try Auth.auth().signOut()
+            
+            authenticationState = .unauthenticated
+            
+            resetUserDetails()
+            
+        }catch let signOutError as NSError{
+            
+            errorMessage = "FIR SignOut Error: \(signOutError.localizedDescription)"
+            return false
+            
+        }
+        
+        return true
         
     }
-    func deleteAccount()async->Bool{
+    
+    // Additional functionality for the user's acount
+    func deleteAccount() async -> Bool{
+        
         return true
+        
     }
 }

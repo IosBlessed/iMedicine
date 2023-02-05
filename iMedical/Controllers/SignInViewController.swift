@@ -40,15 +40,22 @@ class SignInViewController: UIViewController {
         authentication.password = passwordField.text!
         
         guard await authentication.signInWithEmailPassword() else{
+            
             print("Authentication Error: \(authentication.errorMessage)");
             return
+            
         }
+        
        print("Successful authentication")
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let tabBarVC = storyboard.instantiateViewController(withIdentifier: "tabBarVC") as? TabBarViewController{
+            
             tabBarVC.navigationItem.hidesBackButton = true
-            show(tabBarVC, sender: nil)
+            tabBarVC.modalPresentationStyle = .fullScreen
+            present(tabBarVC, animated: true)
+            
         }
         
     }
@@ -56,11 +63,16 @@ class SignInViewController: UIViewController {
     @IBAction func loginButton( sender:RoundButtonView!){
         
         guard self.checkIfFieldsSatisfy(requiredFields: requiredFields, textFields: inputFields) else {
-            self.showAlertMessage(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
+            
+            self.alertIncorrectInput(alertTitle: "Incorrect Input", alertMessage: "Please, fill in required fields", alertButtonTitle: "Try again")
+            
             return
+            
         }
         Task{
+            
             await loginUser()
+            
         }
     }
     

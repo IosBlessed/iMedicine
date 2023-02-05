@@ -1,2 +1,13 @@
-/ .DS_Store
-/iMedical.xcworkspace/xcuserdata/nikitadanilovic.xcuserdatad/UserInterfaceState.xcuserstate
+## User settings
+xcuserdata/
+
+## Local and unreadable project's files
+
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
+**/*.DS_Store
