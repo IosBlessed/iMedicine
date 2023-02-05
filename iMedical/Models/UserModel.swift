@@ -41,6 +41,7 @@ class UserModel{
         var gender:String
         var email:String
         var weight:Float
+        var height:Float
         
         init(
             username:String,
@@ -52,7 +53,9 @@ class UserModel{
             race:String,
             gender:String,
             email:String,
-            weight:Float){
+            weight:Float,
+            height:Float
+        ){
                 
                 self.username = username == "" ? "Unknown user" : username
                 
@@ -73,6 +76,7 @@ class UserModel{
                 self.email = email == "" ? "Unknown email" : email
                 
                 self.weight = weight <= 0.0 ? 0.0 : weight
+            self.height = height <= 0.0 ? 0.0 : height
                 
         }
     }
@@ -107,7 +111,6 @@ class UserModel{
             self.displayName = user?.email ?? "Unknown user"
             
         })
-        
     }
     
     func getUserAccount(completion:@escaping (UserAccount) -> Void){
@@ -115,7 +118,7 @@ class UserModel{
         let db = Firestore.firestore()
         
         guard self.user != nil else{
-            print("Current user is not authenticated!")
+            print("Current user doesn't setted up account!")
             return
         }
         db.collection("userAccounts").document(self.user!.uid).addSnapshotListener(){
@@ -156,7 +159,21 @@ class UserModel{
                 
                 let weight = user["weight"] as? Float ?? 0.0
                 
-                completion(UserAccount(username: username, age: age, metricSystem: metricSystem, country: country, city: city, bloodType: bloodType, race: race, gender: gender, email: email, weight: weight))
+                let height = user["height"] as? Float ?? 0.0
+                
+                completion(UserAccount(
+                    username: username,
+                    age: age,
+                    metricSystem: metricSystem,
+                    country: country,
+                    city: city,
+                    bloodType: bloodType,
+                    race: race,
+                    gender: gender,
+                    email: email,
+                    weight: weight,
+                    height:height
+                ))
          
         }
         
