@@ -71,22 +71,25 @@ class UserAccountViewController: UIViewController {
         
         createAccountButton.isHidden = true
         createAccountButton.layer.opacity = 0.0
+        createAccountButton.initializeBackgroundView()
         
-        user.getUserAccount(completion: {
-            userAcc in
-            
-            let name = userAcc.username
-            
-            guard name != "Unknown user" else{
-                self.createAccountButton.isHidden = false
-                UIView.animate(withDuration: 1, animations: {
-                    self.createAccountButton.layer.opacity = 1.0
-                })
-                return
-            }
-        })
+        DispatchQueue.main.async{
+            self.user.getUserAccount(completion: {
+                userAcc in
+                
+                let name = userAcc.username
+                
+                guard name != "Unknown user" else{
+                    self.createAccountButton.isHidden = false
+                    UIView.animate(withDuration: 1.0, animations: {
+                        self.createAccountButton.layer.opacity = 1.0
+                    })
+                    return
+                }
+            })
+        }
     }
-    
+
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -103,10 +106,19 @@ class UserAccountViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     @IBAction func editAccount(_ sender: Any) {
-        // performSegue(withIdentifier: "setupAcc", sender: nil)
         
-        self.navigationController?.pushViewController(SetupAccountViewController(), animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let setupAccountVC = storyboard.instantiateViewController(withIdentifier: "setupAccount") as! SetupAccountViewController
+        setupAccountVC.navigationItem.title = "SETUP ACCOUNT"
+       setupAccountVC.modalPresentationStyle = .fullScreen
+        show(setupAccountVC, sender: nil)
+       
     }
 }
