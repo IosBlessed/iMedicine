@@ -37,7 +37,6 @@
 		37662EB229671AE4004A4AC2 /* ExtensionUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */; };
 		377C5B152962A1F00090AB3D /* RoundButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377C5B142962A1F00090AB3D /* RoundButtonView.swift */; };
 		377C5B192962A8F10090AB3D /* company_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 377C5B182962A8F10090AB3D /* company_icon.png */; };
-		3781608D298966F0005116F2 /* AccountSettingsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781608C298966F0005116F2 /* AccountSettingsSectionView.swift */; };
 		3781608F2989678A005116F2 /* AccountSettingsSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3781608E2989678A005116F2 /* AccountSettingsSectionModel.swift */; };
 		37845364297A015C00FEDB5E /* signOut.png in Resources */ = {isa = PBXBuildFile; fileRef = 37845363297A015C00FEDB5E /* signOut.png */; };
 		37845366297A069600FEDB5E /* editAccount.png in Resources */ = {isa = PBXBuildFile; fileRef = 37845365297A069600FEDB5E /* editAccount.png */; };
@@ -86,7 +85,6 @@
 		37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUserViewModel.swift; sourceTree = "<group>"; };
 		377C5B142962A1F00090AB3D /* RoundButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonView.swift; sourceTree = "<group>"; };
 		377C5B182962A8F10090AB3D /* company_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = company_icon.png; sourceTree = "<group>"; };
-		3781608C298966F0005116F2 /* AccountSettingsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsSectionView.swift; sourceTree = "<group>"; };
 		3781608E2989678A005116F2 /* AccountSettingsSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsSectionModel.swift; sourceTree = "<group>"; };
 		37845363297A015C00FEDB5E /* signOut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signOut.png; sourceTree = "<group>"; };
 		37845365297A069600FEDB5E /* editAccount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = editAccount.png; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				374774642987678E003752E0 /* SetupAccountCollectionView.swift */,
 				37477466298768E6003752E0 /* SetupAccountCellView.swift */,
 				37477467298768E6003752E0 /* SetupAccountCellView.xib */,
-				3781608C298966F0005116F2 /* AccountSettingsSectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -397,7 +394,6 @@
 			files = (
 				3781608F2989678A005116F2 /* AccountSettingsSectionModel.swift in Sources */,
 				37425120296CB7CC00307273 /* TabletsCellView.swift in Sources */,
-				3781608D298966F0005116F2 /* AccountSettingsSectionView.swift in Sources */,
 				37662EB029670C6B004A4AC2 /* UserModel.swift in Sources */,
 				3759F6D1295F7EFB006DC324 /* StartScreenController.swift in Sources */,
 				37662EB229671AE4004A4AC2 /* ExtensionUserViewModel.swift in Sources */,
