@@ -17,7 +17,7 @@ class SetupAccountCollectionView: UICollectionView {
         
     }
     
-    var cellIndex:Int = 1
+    var cellIndex:Int = 0
     
     var cellStatus:CellFlow!
     
@@ -50,8 +50,7 @@ class SetupAccountCollectionView: UICollectionView {
                 let data = try Data(contentsOf: jsonPath)
                 let decoder = JSONDecoder()
                 
-                let settingsObjects = try decoder.decode(AccountSectionsObjects.self, from: data)
-                
+                var settingsObjects = try decoder.decode(AccountSectionsObjects.self, from: data)
                 return settingsObjects.settings
                 
             }catch let error as NSError{
@@ -63,6 +62,5 @@ class SetupAccountCollectionView: UICollectionView {
         return []
         
     }
-    
 
 }
