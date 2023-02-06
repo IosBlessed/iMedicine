@@ -17,7 +17,7 @@
 		3732E51329631A86000EA112 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3732E51229631A86000EA112 /* SignUpViewController.swift */; };
 		37425120296CB7CC00307273 /* TabletsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742511E296CB7CC00307273 /* TabletsCellView.swift */; };
 		37425121296CB7CC00307273 /* TabletsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3742511F296CB7CC00307273 /* TabletsCell.xib */; };
-		3747746329876726003752E0 /* ExtensionSetupAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3747746229876726003752E0 /* ExtensionSetupAccountViewController.swift */; };
+		3747746329876726003752E0 /* Extension+SetupAccountCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3747746229876726003752E0 /* Extension+SetupAccountCollectionView.swift */; };
 		374774652987678E003752E0 /* SetupAccountCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374774642987678E003752E0 /* SetupAccountCollectionView.swift */; };
 		37477468298768E6003752E0 /* SetupAccountCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37477466298768E6003752E0 /* SetupAccountCellView.swift */; };
 		37477469298768E6003752E0 /* SetupAccountCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37477467298768E6003752E0 /* SetupAccountCellView.xib */; };
@@ -28,6 +28,7 @@
 		375337F2295F78EE007D1415 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375337F0295F78EE007D1415 /* Main.storyboard */; };
 		375337F4295F78EE007D1415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 375337F3295F78EE007D1415 /* Assets.xcassets */; };
 		375337F7295F78EE007D1415 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 375337F5295F78EE007D1415 /* LaunchScreen.storyboard */; };
+		3758E88D299025EF0007AEFA /* Extension+SetupAccountPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3758E88C299025EF0007AEFA /* Extension+SetupAccountPickerView.swift */; };
 		3759F6CF295F7D06006DC324 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3759F6CE295F7D06006DC324 /* GoogleService-Info.plist */; };
 		3759F6D1295F7EFB006DC324 /* StartScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759F6D0295F7EFB006DC324 /* StartScreenController.swift */; };
 		3759F6DE295F8FD9006DC324 /* BackgroundScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3759F6DD295F8FD9006DC324 /* BackgroundScreenView.swift */; };
@@ -63,7 +64,7 @@
 		3732E51229631A86000EA112 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3742511E296CB7CC00307273 /* TabletsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabletsCellView.swift; sourceTree = "<group>"; };
 		3742511F296CB7CC00307273 /* TabletsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabletsCell.xib; sourceTree = "<group>"; };
-		3747746229876726003752E0 /* ExtensionSetupAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionSetupAccountViewController.swift; sourceTree = "<group>"; };
+		3747746229876726003752E0 /* Extension+SetupAccountCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+SetupAccountCollectionView.swift"; sourceTree = "<group>"; };
 		374774642987678E003752E0 /* SetupAccountCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAccountCollectionView.swift; sourceTree = "<group>"; };
 		37477466298768E6003752E0 /* SetupAccountCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupAccountCellView.swift; sourceTree = "<group>"; };
 		37477467298768E6003752E0 /* SetupAccountCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetupAccountCellView.xib; sourceTree = "<group>"; };
@@ -76,6 +77,7 @@
 		375337F3295F78EE007D1415 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		375337F6295F78EE007D1415 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		375337F8295F78EE007D1415 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3758E88C299025EF0007AEFA /* Extension+SetupAccountPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+SetupAccountPickerView.swift"; sourceTree = "<group>"; };
 		3759F6CE295F7D06006DC324 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3759F6D0295F7EFB006DC324 /* StartScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenController.swift; sourceTree = "<group>"; };
 		3759F6DD295F8FD9006DC324 /* BackgroundScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundScreenView.swift; sourceTree = "<group>"; };
@@ -224,7 +226,8 @@
 				37D3E34B29650D21007774B4 /* ExtensionUIViewController.swift */,
 				37662EB129671AE4004A4AC2 /* ExtensionUserViewModel.swift */,
 				3784536B297A0B9000FEDB5E /* ExtensionUserAccountViewController.swift */,
-				3747746229876726003752E0 /* ExtensionSetupAccountViewController.swift */,
+				3747746229876726003752E0 /* Extension+SetupAccountCollectionView.swift */,
+				3758E88C299025EF0007AEFA /* Extension+SetupAccountPickerView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -404,10 +407,11 @@
 				3759F6E5295FAE7A006DC324 /* ExtensionBarBackButton.swift in Sources */,
 				37E282402970A7AC00EF1D89 /* MedicamentViewModel.swift in Sources */,
 				372EFE322967B14C00BBCC99 /* TabletsViewController.swift in Sources */,
-				3747746329876726003752E0 /* ExtensionSetupAccountViewController.swift in Sources */,
+				3747746329876726003752E0 /* Extension+SetupAccountCollectionView.swift in Sources */,
 				3759F6DE295F8FD9006DC324 /* BackgroundScreenView.swift in Sources */,
 				3732E51129631A7A000EA112 /* SignInViewController.swift in Sources */,
 				379F2D652974FF43003289E1 /* UserOptionsCellModel.swift in Sources */,
+				3758E88D299025EF0007AEFA /* Extension+SetupAccountPickerView.swift in Sources */,
 				375337EB295F78EE007D1415 /* AppDelegate.swift in Sources */,
 				3732E51329631A86000EA112 /* SignUpViewController.swift in Sources */,
 				374774652987678E003752E0 /* SetupAccountCollectionView.swift in Sources */,
