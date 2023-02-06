@@ -74,7 +74,6 @@ extension SetupAccountViewController: UICollectionViewDelegate, UICollectionView
             return
             
         }
-        
         switch(cellsCollectionView.cellStatus){
             case .selected:
                 selectedCellView(cell: cell!)
