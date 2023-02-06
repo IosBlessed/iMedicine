@@ -5,7 +5,7 @@ xcuserdata/
 
 *.xcodeproj/*
 **/*.pbxproj
-!*.xcodeproj/project.pbxproj
+/*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
