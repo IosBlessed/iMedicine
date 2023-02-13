@@ -50,11 +50,7 @@ class UserAccountViewController: UIViewController {
     }
     
     func initializeScrollView(){
-      /*
-        mainContentScrollView.layer.borderColor = UIColor.green.cgColor
-        mainContentScrollView.layer.borderWidth = 2
-        mainContentScrollView.layer.cornerRadius = 10
-       */
+
         mainContentScrollView.addSubview(userOptionsCollectionView)
     }
     
