@@ -8,37 +8,13 @@
 import Foundation
 import UIKit
 
-// MARK: -> Contains whole settings from accountSections.json file
-struct AccountSectionsObjects:Decodable{
-    
-    let settings:[SectionObject]
-    
-}
-// MARK: -> Each object of AccountSectionObjects is below:
-struct SectionObject:Decodable{
-    
-    let id: Int
-    let section:String
-    let text:String
-    let options:[String]?
-    let countries:[SectionCountries]?
-    let cities:[SectionCities]?
-    
-}
+//MARK: - Enums data flow
 
-struct SectionCities:Decodable{
+enum UserAnswerFlow{
     
-    let country:String
-    let cities:[String]
-    
-}
-// MARK: -> Optional(because only section country has it inside)
-struct SectionCountries:Decodable{
-    
-    let title:String
-    let flag:String
-    let capital:String
-    let population:String
+    case pickerView
+    case inputText
+    case unknown
     
 }
 
@@ -81,6 +57,39 @@ enum CurrentSection:String{
             
         }
     }
+}
+
+// MARK: - Account JSON Setting Section
+
+struct AccountSectionsObjects:Decodable{
+    
+    let settings:[SectionObject]
     
 }
 
+struct SectionObject:Decodable{
+    
+    let id: Int
+    let section:String
+    let text:String
+    let options:[String]?
+    let countries:[SectionCountries]?
+    let cities:[SectionCities]?
+    
+}
+
+struct SectionCities:Decodable{
+    
+    let country:String
+    let cities:[String]
+    
+}
+
+struct SectionCountries:Decodable{
+    
+    let title:String
+    let flag:String
+    let capital:String
+    let population:String
+    
+}
