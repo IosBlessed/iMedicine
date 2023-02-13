@@ -50,7 +50,7 @@ class SetupAccountCollectionView: UICollectionView {
                 let data = try Data(contentsOf: jsonPath)
                 let decoder = JSONDecoder()
                 
-                var settingsObjects = try decoder.decode(AccountSectionsObjects.self, from: data)
+                let settingsObjects = try decoder.decode(AccountSectionsObjects.self, from: data)
                 return settingsObjects.settings
                 
             }catch let error as NSError{
