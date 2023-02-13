@@ -10,17 +10,72 @@ import SwiftUI
 
 class SetupAccountViewController: UIViewController {
     
+    //MARK: - Account Setting Properties
+    
     @IBOutlet weak var sectionText: UILabel!
     
     @IBOutlet weak var cellsCollectionView: SetupAccountCollectionView!
     
     @IBOutlet weak var previousSettingButton: RoundButtonView!
-    
     @IBOutlet weak var nextSettingButton: RoundButtonView!
+    
+    @IBOutlet weak var userInputText: UITextField!
     
     var settings = [SectionObject]()
     
-    // MARK: -> Setup background view
+    lazy var answersPickerView:UIPickerView = {
+        
+        let answerPV = UIPickerView()
+        
+        answerPV.delegate = self
+        answerPV.dataSource = self
+        
+        view.addSubview(answerPV)
+        
+        answerPV.translatesAutoresizingMaskIntoConstraints = false
+        
+        let horizontalConstraint = answerPV.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let verticalConstraint = answerPV.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        
+        NSLayoutConstraint.activate([horizontalConstraint,verticalConstraint])
+        
+        return answerPV
+    }()
+    
+    var pickerVariantsOfAnswer:[String] = []
+    
+    lazy var userAnswers:[String:String] = [:]
+    
+    var currentSectionIndex:Int = 0
+    
+    var currentSection:CurrentSection = .unknown
+    
+    var userAnswerFlow:UserAnswerFlow = .unknown {
+        
+        didSet{
+            
+            if userAnswerFlow == .pickerView{
+    
+                userInputText.isHidden = true
+                
+                answersPickerView.isHidden = false
+                answersPickerView.reloadComponent(0)
+                answersPickerView.selectRow(0, inComponent: 0, animated: false)
+                
+            }else{
+                userInputText.isHidden = false
+                userInputText.text = ""
+                userInputText.font = UIFont(name: "Times New Roman", size: 20)
+                
+                answersPickerView.isHidden = true
+                
+            }
+            
+        }
+        
+    }
+    
+    // MARK: - Setup background view
     private func initializeBackgroundView(){
         // setGragient -> ExtensionUIViewController.swift
         let gradient = self.setGradient()
@@ -29,18 +84,20 @@ class SetupAccountViewController: UIViewController {
         
     }
     
-    // MARK: -> Setup collection view with account settings section
+    // MARK: - Setup collection view with account settings section
     private func initializeCellsCollectionView(){
+        
+        cellsCollectionView.dataSource = self
+        cellsCollectionView.delegate = self
         
         settings = cellsCollectionView.initializeSettingsSectionsJSON()
         
         view.addSubview(cellsCollectionView)
         
-        cellsCollectionView.dataSource = self
-        cellsCollectionView.delegate = self
-        
         cellsCollectionView.setupCustomCollectionView()
     }
+    
+    //MARK: - Setup Account data flow
     
     private func initializeButtonsView(){
         
@@ -62,20 +119,25 @@ class SetupAccountViewController: UIViewController {
         
     }
     
-    private func initializeSectionText(){
-        
-        let index = cellsCollectionView.cellIndex - 1
+   
+    private func initializeSectionText(index:Int){
         
         sectionText.text = settings[index].text
+        
+        sectionText.textColor = UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 0.9)
         
         switch(index){
             
             case 0:
+            
                 previousSettingButton.isHidden = true
+            
             break;
             
             case settings.count - 1:
+            
                 nextSettingButton.isHidden = true
+            
             break;
             
             default:
@@ -86,32 +148,128 @@ class SetupAccountViewController: UIViewController {
     }
     
     
-    private func initializeSectionAnswers(){
+    private func getUserAnswer(){
         
-        let index = cellsCollectionView.cellIndex - 1
+        guard userAnswerFlow == .pickerView else{return}
         
+        let answerIndex = answersPickerView.selectedRow(inComponent: 0)
+        let section = settings[currentSectionIndex].section
+        let value = pickerVariantsOfAnswer[answerIndex]
+        
+        print("\(section) => \(value)")
+        userAnswers["\(section)"] = value
+        
+    }
+    
+    private func showVariantsAnswers(_ variants:[String]?,_ section:CurrentSection){
+        
+        switch variants {
+        case .some(_):
+            if let answers = variants{
+                pickerVariantsOfAnswer = answers
+                userAnswerFlow = .pickerView
+            }
+        case .none:
+            userAnswerFlow = .inputText
+        }
+    
+    }
+    
+    private func initializeSectionAnswers(index:Int){
+        
+        let sectionName = settings[index].section
+        
+        let section = currentSection.defineCurrentSection(sectionName: sectionName)
+        
+        currentSectionIndex = index
+        
+        switch(section){
+            
+        case .username:
+            
+            showVariantsAnswers(nil,section)
+            
+            break;
+            
+        case .age:
+            
+            var ageVariants:[String] = []
+            
+            for age in 10...100{
+                ageVariants.append("\(age)")
+            }
+            
+            showVariantsAnswers(ageVariants,section)
+            
+            break;
+            
+        case .country:
+            
+            if let countries = settings[index].countries{
+                
+                var countriesArray:[String] = []
+                
+                for country in countries{
+                    countriesArray.append("\(country.flag) \(country.title)")
+                }
+                
+                showVariantsAnswers(countriesArray,section)
+            }
+            
+            break;
+            
+        case .city:
+            
+            if let cities = settings[index].cities{
+                var citiesArray:[String] = []
+                for city in cities{
+                    
+                    if userAnswers["country"]!.contains(city.country){
+                        citiesArray = city.cities
+                    }
+                }
+                
+                showVariantsAnswers(citiesArray,section)
+            }
+            
+            break;
+            
+        default:
+            
+            showVariantsAnswers(settings[index].options,section)
+            
+        }
+         
         
     }
     
     
-
-    // MARK: -> Initial setup
+    private func initializeSettingsSection(){
+        
+        let index = cellsCollectionView.cellIndex
+        
+        initializeSectionText(index:index)
+        
+        initializeSectionAnswers(index: index)
+        
+    }
+    
+    //MARK: - Lifecycle
+    
     override func viewDidLoad() {
-
+        
         super.viewDidLoad()
         
         initializeBackgroundView()
         
         initializeCellsCollectionView()
         
-        initializeSectionText()
+        initializeSettingsSection()
         
         initializeButtonsView()
         
-    
     }
     
-    // MARK: -> Hide Tab Bar from the bottom
     override func viewWillAppear(_ animated: Bool) {
         
         super.viewWillAppear(animated)
@@ -119,6 +277,7 @@ class SetupAccountViewController: UIViewController {
         
     }
     
+    //MARK: - Actions
     @IBAction func unselectCell(_ sender: Any) {
         
         previousSettingButton.tapSimulator()
@@ -127,9 +286,9 @@ class SetupAccountViewController: UIViewController {
         
         cellsCollectionView.cellIndex -= 1
         
-        collectionView(cellsCollectionView, didSelectItemAt: IndexPath(item: cellsCollectionView.cellIndex, section: 0))
+        collectionView(cellsCollectionView, didSelectItemAt: IndexPath(item: cellsCollectionView.cellIndex + 1, section: 0))
         
-        initializeSectionText()
+        initializeSettingsSection()
         
     }
     
@@ -139,11 +298,13 @@ class SetupAccountViewController: UIViewController {
         
         cellsCollectionView.cellStatus = .selected
         
+        cellsCollectionView.cellIndex += 1
+    
         collectionView(cellsCollectionView, didSelectItemAt: IndexPath(item: cellsCollectionView.cellIndex, section: 0))
         
-        cellsCollectionView.cellIndex += 1
+        getUserAnswer()
         
-        initializeSectionText()
+        initializeSettingsSection()
 
     }
     

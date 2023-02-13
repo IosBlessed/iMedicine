@@ -4,7 +4,8 @@ xcuserdata/
 ## Local and unreadable project's files
 
 *.xcodeproj/*
-!*.xcodeproj/project.pbxproj
+**/*.pbxproj
+/*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
