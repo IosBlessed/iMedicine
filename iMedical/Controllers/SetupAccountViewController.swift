@@ -150,14 +150,44 @@ class SetupAccountViewController: UIViewController {
     
     private func getUserAnswer(){
         
-        guard userAnswerFlow == .pickerView else{return}
+        switch userAnswerFlow {
+        case .pickerView:
+            
+            let answerIndex = answersPickerView.selectedRow(inComponent: 0)
+            let section = settings[currentSectionIndex].section
+            let value = pickerVariantsOfAnswer[answerIndex]
+            print("\(section) => \(value)")
+            userAnswers["\(section)"] = value
+            
+        case .inputText:
+            
+            if let userText = userInputText.text{
+                
+                guard userText != "" && !userText.contains(" ") else{
+                    
+                    self.alertIncorrectInput(alertTitle: "Wrong data!", alertMessage: "Please, fill in required fields correctly!", alertButtonTitle: "OK")
+                    return
+                }
+                
+                
+            }else{
+                print("Unknown field for input text at SetupAccountViewController.swift")
+                return
+            }
+            
+        case .unknown:
+            print("System error. Unknown userAnswer flow.")
+            //default section
+        }
         
-        let answerIndex = answersPickerView.selectedRow(inComponent: 0)
-        let section = settings[currentSectionIndex].section
-        let value = pickerVariantsOfAnswer[answerIndex]
+        cellsCollectionView.cellIndex += 1
+    
+        collectionView(cellsCollectionView, didSelectItemAt: IndexPath(item: cellsCollectionView.cellIndex, section: 0))
         
-        print("\(section) => \(value)")
-        userAnswers["\(section)"] = value
+        initializeSettingsSection()
+        
+            // Verification module of user answer
+        print("userAnswerFlow is \(userAnswerFlow)")
         
     }
     
@@ -277,7 +307,7 @@ class SetupAccountViewController: UIViewController {
         
     }
     
-    //MARK: - Actions
+    //MARK: - Actionsprint("userAnswerFlow is \(userAnswerFlow)")
     @IBAction func unselectCell(_ sender: Any) {
         
         previousSettingButton.tapSimulator()
@@ -298,13 +328,7 @@ class SetupAccountViewController: UIViewController {
         
         cellsCollectionView.cellStatus = .selected
         
-        cellsCollectionView.cellIndex += 1
-    
-        collectionView(cellsCollectionView, didSelectItemAt: IndexPath(item: cellsCollectionView.cellIndex, section: 0))
-        
         getUserAnswer()
-        
-        initializeSettingsSection()
 
     }
     
