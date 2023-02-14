@@ -10,13 +10,6 @@ import UIKit
 
 extension SetupAccountViewController:UIPickerViewDelegate, UIPickerViewDataSource{
     
-    enum PickerViewState{
-        
-        case exists
-        case notExists
-        
-    }
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

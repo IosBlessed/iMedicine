@@ -50,16 +50,12 @@ class UserAccountViewController: UIViewController {
     }
     
     func initializeScrollView(){
-      /*
-        mainContentScrollView.layer.borderColor = UIColor.green.cgColor
-        mainContentScrollView.layer.borderWidth = 2
-        mainContentScrollView.layer.cornerRadius = 10
-       */
+
         mainContentScrollView.addSubview(userOptionsCollectionView)
     }
     
     func initializeUserCollectionView(){
-        // Whole logic desribed in ExtensionUserAccountViewController.swift 
+        // Whole logic described in ExtensionUserAccountViewController.swift
         userOptionsCollectionView.dataSource = self
         userOptionsCollectionView.delegate = self
     
@@ -75,7 +71,9 @@ class UserAccountViewController: UIViewController {
         createAccountButton.initializeBackgroundView()
         
         DispatchQueue.main.async{
-            self.user.getUserAccount(completion: {
+            
+            self.user.getUserAccount{
+                
                 userAcc in
                 
                 let name = userAcc.username
@@ -87,7 +85,8 @@ class UserAccountViewController: UIViewController {
                     })
                     return
                 }
-            })
+                
+            }
         }
     }
 

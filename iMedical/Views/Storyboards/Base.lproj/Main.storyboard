@@ -438,6 +438,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-a9-oYy">
+                                <rect key="frame" x="56" y="431" width="303" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FQQ-OR-K7z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -452,6 +458,7 @@
                         <outlet property="nextSettingButton" destination="zLg-Hk-zAY" id="kZU-Ay-wr6"/>
                         <outlet property="previousSettingButton" destination="vLi-eM-QtW" id="jYr-Rk-fIC"/>
                         <outlet property="sectionText" destination="2Q9-pi-AmF" id="2kF-Og-1iM"/>
+                        <outlet property="userInputText" destination="qhV-a9-oYy" id="K5a-Ss-phT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeG-Fq-0oZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

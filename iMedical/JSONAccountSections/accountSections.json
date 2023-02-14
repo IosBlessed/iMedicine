@@ -70,7 +70,7 @@
             "id": 8,
             "section": "weight",
             "text": "Please, choose your weight",
-            "options": ["0", "1"]
+            "options": ["10", "11"]
         },
         {
             "id": 9,
