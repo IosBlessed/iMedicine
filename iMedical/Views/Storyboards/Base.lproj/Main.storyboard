@@ -377,7 +377,6 @@
                                                 <fragment content="Previous">
                                                     <attributes>
                                                         <font key="NSFont" size="25" name="Helvetica"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -408,7 +407,6 @@
                                                 <fragment content="Next">
                                                     <attributes>
                                                         <font key="NSFont" size="25" name="Helvetica"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
