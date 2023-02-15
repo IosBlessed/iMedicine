@@ -99,7 +99,7 @@ class SetupAccountViewController: UIViewController {
     
     //MARK: - Setup Account data flow
     
-    private func initializeButtonsView(){
+    private func initializeNavigationalButtons(){
         
         previousSettingButton.initializeBackgroundView()
         
@@ -107,48 +107,16 @@ class SetupAccountViewController: UIViewController {
         
     }
     
-    private func showSectionTextSwitchDefault(index:Int){
-        
-        previousSettingButton.isHidden = false
-        
-        nextSettingButton.isHidden = false
-        
-        guard index % 2 == 1 else{return}
-        
-        cellsCollectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: false)
-        
-    }
-    
-   
     private func initializeSectionText(index:Int){
         
         sectionText.text = settings[index].text
         
         sectionText.textColor = UIColor(displayP3Red: 0.353, green: 0.757, blue: 0.816, alpha: 0.9)
         
-        switch(index){
-            
-            case 0:
-            
-                previousSettingButton.isHidden = true
-            
-            break;
-            
-            case settings.count - 1:
-            
-                nextSettingButton.isHidden = true
-            
-            break;
-            
-            default:
-                showSectionTextSwitchDefault(index: index)
-                      
-        }
-        
     }
     
     
-    private func getUserAnswer(){
+    private func getUserAnswer() -> Bool{
         
         switch userAnswerFlow {
         case .pickerView:
@@ -166,29 +134,26 @@ class SetupAccountViewController: UIViewController {
                 guard userText != "" && !userText.contains(" ") else{
                     
                     self.alertIncorrectInput(alertTitle: "Wrong data!", alertMessage: "Please, fill in required fields correctly!", alertButtonTitle: "OK")
-                    return
+                    return false
                 }
                 
                 
             }else{
                 print("Unknown field for input text at SetupAccountViewController.swift")
-                return
+                return false
             }
             
         case .unknown:
-            print("System error. Unknown userAnswer flow.")
             //default section
+            print("System error. Unknown userAnswer flow.")
+            
+            return false
         }
-        
-        cellsCollectionView.cellIndex += 1
-    
-        collectionView(cellsCollectionView, didSelectItemAt: IndexPath(item: cellsCollectionView.cellIndex, section: 0))
-        
-        initializeSettingsSection()
         
             // Verification module of user answer
         print("userAnswerFlow is \(userAnswerFlow)")
         
+        return true
     }
     
     private func showVariantsAnswers(_ variants:[String]?,_ section:CurrentSection){
@@ -221,18 +186,6 @@ class SetupAccountViewController: UIViewController {
             
             break;
             
-        case .age:
-            
-            var ageVariants:[String] = []
-            
-            for age in 10...100{
-                ageVariants.append("\(age)")
-            }
-            
-            showVariantsAnswers(ageVariants,section)
-            
-            break;
-            
         case .country:
             
             if let countries = settings[index].countries{
@@ -247,6 +200,20 @@ class SetupAccountViewController: UIViewController {
             }
             
             break;
+            
+        case .weight:
+            print("Weight is here")
+            if userAnswers["metricSystem"] == "World"{
+                var weightWorld:[String] = []
+                if let options = settings[index].options{
+                    for weight in options{
+                        weightWorld.append("\(weight) kg")
+                    }
+                }
+                showVariantsAnswers(weightWorld, section)
+            }else{
+                if let opt
+            }
             
         case .city:
             
@@ -276,11 +243,45 @@ class SetupAccountViewController: UIViewController {
     
     private func initializeSettingsSection(){
         
+        switch buttonAction{
+            
+        case .finish:
+            print("finish")
+            return
+            
+        case .next:
+            cellsCollectionView.cellIndex += 1
+            collectionView(cellsCollectionView, didSelectItemAt: IndexPath(item: cellsCollectionView.cellIndex, section: 0))
+            
+        case .previous:
+            cellsCollectionView.cellIndex -= 1
+            collectionView(cellsCollectionView, didSelectItemAt: IndexPath(item: cellsCollectionView.cellIndex + 1, section: 0))
+            
+        case .unknown:
+            print("First setting section")
+            
+        }
+        
         let index = cellsCollectionView.cellIndex
+        
+        cellsCollectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .centeredHorizontally, animated: false)
         
         initializeSectionText(index:index)
         
         initializeSectionAnswers(index: index)
+        
+        switch index{
+            
+            case 0:
+                previousSettingButton.isHidden = true
+            case settings.count - 1:
+                nextSettingButton.changeButtonTitle(title: "Finish")
+            default:
+                previousSettingButton.isHidden = false
+                nextSettingButton.isHidden = false
+                nextSettingButton.changeButtonTitle(title: "Next")
+           
+        }
         
     }
     
@@ -296,7 +297,7 @@ class SetupAccountViewController: UIViewController {
         
         initializeSettingsSection()
         
-        initializeButtonsView()
+        initializeNavigationalButtons()
         
     }
     
@@ -307,29 +308,42 @@ class SetupAccountViewController: UIViewController {
         
     }
     
+    enum ButtonActionFlow{
+        case finish
+        case next
+        case previous
+        case unknown
+    }
+    
+    lazy var buttonAction:ButtonActionFlow = .unknown
+    
     //MARK: - Actionsprint("userAnswerFlow is \(userAnswerFlow)")
-    @IBAction func unselectCell(_ sender: Any) {
+    @IBAction func unselectCell(_ sender: RoundButtonView) {
         
         previousSettingButton.tapSimulator()
         
         cellsCollectionView.cellStatus = .unselected
         
-        cellsCollectionView.cellIndex -= 1
-        
-        collectionView(cellsCollectionView, didSelectItemAt: IndexPath(item: cellsCollectionView.cellIndex + 1, section: 0))
+        buttonAction = .previous
         
         initializeSettingsSection()
         
     }
     
-    @IBAction func selectCell(_ sender: Any) {
+    @IBAction func selectCell(_ sender: RoundButtonView) {
         
         nextSettingButton.tapSimulator()
         
         cellsCollectionView.cellStatus = .selected
         
-        getUserAnswer()
-
+        buttonAction = (cellsCollectionView.cellIndex < settings.count - 1) ? .next : .finish
+        
+        if getUserAnswer(){
+            
+            initializeSettingsSection()
+            
+        }
+      
     }
     
 }

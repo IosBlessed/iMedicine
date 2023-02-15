@@ -10,19 +10,25 @@ import UIKit
 
 @IBDesignable
 class RoundButtonView: UIButton {
-
+    
+    enum ButtonFlow{
+        case next
+        case previous
+        case unknown
+    }
+    
     @IBInspectable var cornerRadius: CGFloat = 0{
         didSet{
             self.layer.cornerRadius = cornerRadius
         }
     }
-
+    
     @IBInspectable var borderWidth: CGFloat = 0{
         didSet{
             self.layer.borderWidth = borderWidth
         }
     }
-
+    
     @IBInspectable var borderColor: UIColor = UIColor.clear{
         didSet{
             self.layer.borderColor = borderColor.cgColor
@@ -51,5 +57,12 @@ class RoundButtonView: UIButton {
             self.layer.shadowOpacity = 1.0
         })
         
+    }
+    
+    func changeButtonTitle(title:String){
+        self.setAttributedTitle(NSAttributedString(string: title,
+                                                   attributes:[
+                                                    NSAttributedString.Key.font:UIFont.systemFont(ofSize: 25)
+                                                   ]), for: .normal)
     }
 }
