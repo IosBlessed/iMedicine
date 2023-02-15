@@ -1,5 +1,5 @@
 ## User settings
-*/xcuserdata/*
+**/xcuserdata/*
 
 ## Local and unreadable project's files
 
@@ -12,3 +12,4 @@
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 **/*.DS_Store
+**/*.xcuserstate
