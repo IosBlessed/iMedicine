@@ -212,7 +212,7 @@ class SetupAccountViewController: UIViewController {
                 }
                 showVariantsAnswers(weightWorld, section)
             }else{
-                if let opt
+            
             }
             
         case .city:
