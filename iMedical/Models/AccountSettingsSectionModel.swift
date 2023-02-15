@@ -52,6 +52,12 @@ enum CurrentSection:String{
         case CurrentSection.city.rawValue:
             section = .city
             return section
+        case CurrentSection.weight.rawValue:
+            section = .weight
+            return section
+        case CurrentSection.height.rawValue:
+            section = .height
+            return section
         default:
             return section
             
