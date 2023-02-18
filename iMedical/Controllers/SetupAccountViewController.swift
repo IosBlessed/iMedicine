@@ -212,7 +212,7 @@ class SetupAccountViewController: UIViewController {
                 }
                 showVariantsAnswers(weightWorld, section)
             }else{
-            
+            // Variant with selection of US metric system 
             }
             
         case .city:
