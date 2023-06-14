@@ -1,6 +1,6 @@
 # iMedicine Inc. personal medical application for everyone.
 
-## It's on developing way. Software performs you to kkep whole data about medicaments, drugs, instruction of usage and what type of pain they prevent.
+## It's on developing way. Software performs you to keep whole data about medicaments, drugs, instruction of usage and what type of pain they prevent.
 ## Credential for test: 
     ## login:test@gmail.com, password:123456
     ## App will collect such type of data, as: email, username, country, city, race, bloodType, weight, height, age and etc. 
