@@ -9,6 +9,6 @@
 
 ## I used cocoapods as a dependency manager, SDWebImage, Firebase,SwiftUI,UIKit, SwiftyJSON and etc. 
 
-## It's and MVP -> I stored data particullary on the server. On local base I have JSON file with the Account Settings. 
+### It's and MVP -> I stored data particullary on the server. On local base I have JSON file with the Account Settings. 
 
-## First of all -> be sure, that your project's settings are equal to this: Architecture -> arm64, pods are installed correct, without repetitions, module with Firebase implemented in a correct way. Recommend to test it on iPhone 11, because as I said, it's MVP -> I didn't setup layout in a normal way. 
+### First of all -> be sure, that your project's settings are equal to this: Architecture -> arm64, pods are installed correct, without repetitions, module with Firebase implemented in a correct way. Recommend to test it on iPhone 11, because as I said, it's MVP -> I didn't setup layout in a normal way. 
